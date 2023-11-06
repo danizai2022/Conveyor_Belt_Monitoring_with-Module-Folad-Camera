@@ -24,6 +24,7 @@ class Report_API:
     def button_connector(self):
         self.ui_re.button_connector(self.Show_Report, self.Show_Report_Filter)
 
+
     def Show_Report(self):
         """
         This function is used to show the result in the QTableWidget
@@ -75,7 +76,6 @@ class Report_API:
         image_path = records[0]["image_path"]
         # img_roi = cv2.imread(image_path)
         self.ui_re.PhotoViewer(image_path)
-
         # self.ui_re.show_text(" " + str(records[0]["id"]) + " ")
         # self.show_image(img_roi)
 
@@ -186,7 +186,6 @@ class Report_API:
                     5: str_critical,
                 }
                 self.ui_re.set_table_information(infoes, i)
-
                 self.ui_re.Create_Button("Show Defect", i, 6, self.pb_Detail_Function)
                 self.ui_re.Create_Button("Delete Defect", i, 7, self.pb_Delete_Function)
 

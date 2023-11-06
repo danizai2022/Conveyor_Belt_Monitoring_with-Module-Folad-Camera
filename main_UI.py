@@ -35,7 +35,7 @@ class mainUI:
         # self.tableWidget.verticalHeader().setStretchLastSection(True)
         header = self.ui.tableWidget.horizontalHeader()
         self.ui.tableWidget.horizontalHeaderVisible = True
-        header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        #header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
         header.setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
         header.setSectionResizeMode(2, QHeaderView.ResizeMode.Stretch)
         header.setSectionResizeMode(3, QHeaderView.ResizeMode.Stretch)
@@ -44,6 +44,7 @@ class mainUI:
         header.setSectionResizeMode(6, QHeaderView.ResizeMode.Stretch)
         header.setSectionResizeMode(7, QHeaderView.ResizeMode.Stretch)
         header.setDefaultAlignment(QtCore.Qt.AlignLeft)
+        self.ui.tableWidget.setColumnWidth(0, 60)  
 
     def load_page(self):
         btn = self.ui.sender()

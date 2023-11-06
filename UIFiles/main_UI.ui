@@ -4096,42 +4096,66 @@ font: 26pt &quot;Mongolian Baiti&quot;;</string>
                          </attribute>
                          <column>
                           <property name="text">
-                           <string>ID of Defect</string>
+                           <string>ID </string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Length</string>
+                           <string>Length of Defect</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Depth</string>
+                           <string>Depth of Defect</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Width</string>
+                           <string>Width of Defect</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Date</string>
+                           <string>Date of Defect</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Critical</string>
+                           <string>Type of Defect</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Show Defect</string>
+                           <string>Image of Defect</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Delete Defect</string>
+                           <string>Remove Defect</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
                           </property>
                          </column>
                         </widget>

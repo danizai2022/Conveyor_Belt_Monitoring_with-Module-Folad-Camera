@@ -281,7 +281,7 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
-             <string/>
+             <string>Save Image</string>
             </property>
             <property name="styleSheet">
              <string notr="true">Save Image</string>
@@ -291,7 +291,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../icons/save.png</normaloff>../icons/save.png</iconset>
+              <normaloff>../icons/save_dark.png</normaloff>../icons/save_dark.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -338,7 +338,7 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
-             <string/>
+             <string>Zoom_In</string>
             </property>
             <property name="styleSheet">
              <string notr="true">Zoom In</string>
@@ -376,7 +376,7 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
-             <string/>
+             <string>Zoom-Out</string>
             </property>
             <property name="styleSheet">
              <string notr="true">Zoom Out</string>
@@ -414,7 +414,7 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
-             <string/>
+             <string>Zoom-Strech</string>
             </property>
             <property name="styleSheet">
              <string notr="true">Zoom to Fit</string>
@@ -471,7 +471,7 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
-             <string/>
+             <string>Crosshair</string>
             </property>
             <property name="styleSheet">
              <string notr="true">Show Crosshair</string>
@@ -509,7 +509,7 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
-             <string/>
+             <string>Grid</string>
             </property>
             <property name="styleSheet">
              <string notr="true">Show Grid</string>

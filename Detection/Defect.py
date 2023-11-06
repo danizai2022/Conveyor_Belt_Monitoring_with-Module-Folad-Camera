@@ -48,8 +48,8 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
     if fname.ndim >2 :
             # img=cv2.
             fname = cv2.cvtColor(fname, cv2.COLOR_BGR2GRAY)
+    #img = fname[:, 100:620]
     img = fname[:, 25:620]
-    
     # -----------------------------------------------------------------------5
     #########################################      img = fname  ####################################  for getting image from camera
     # -----------------------------------------------------------------------

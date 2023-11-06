@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem
 from .Common_Function_UI import Common_Function_UI
 from backend.Photo_Viewer.Photo_Viewer_UI import PhotoViewer_UI
@@ -73,11 +74,12 @@ class Report_UI(Common_Function_UI):
         pb_Detail.clicked.connect(fun)
 
     def set_table_information(self, infoes: dict, ID: int):
-        for name, value in infoes.items():
+       for name, value in infoes.items():
+            item_table = QTableWidgetItem(value) # create the item                    
+            item_table.setTextAlignment(Qt.AlignCenter) # change the alignment       
             self.table_information["tableWidget"].setItem(
-                ID, name, QTableWidgetItem(value)
+                ID, name, item_table
             )
-
     def alarm_message_for_delete(self, Select_ID):
         res = self.show_alert_window(
             title="Delete",
