@@ -3,7 +3,6 @@ import numpy as np
 from . import heatMap
 from . import ConvayerBase
 import os
-
 from datetime import date
 import jdatetime
 from scipy.optimize import curve_fit
@@ -18,17 +17,13 @@ gradiant = heatMap.G10.generate_gradiant(GRADIANT_SIZE)
 gradiant = gradiant.reshape((-1, 3))
 res = np.zeros((500, 640, 3), dtype=np.uint8)
 depth_img = np.zeros(res.shape[:2], dtype=np.float32)
-frame_idx = 0
+
 pix_mm_depth = 0.34
-step = 2
-
-#db_Report = databaseManager("root", "dorsa-co", "localhost", "test_database")
-#defect_tracker = defectTracker(min_g_thresh=20, step_per_line=2, db_Report=db_Report)
-
-
+step=2
+#frame_idx = 0     #get error when the defect occur in th first place of frame
+frame_idx = 500 // step  #remove the error when the defect occur in th first place of frame
 
 def defect_detection(frame_idx, fname,idx,defect_tracker):
-
     ###########################print("Idx on Defect Detection Page")
     ######################print(idx)    check whether idx recieve from LiveView_API page or not 
     # frame_idx = frame_idx = +1 
@@ -40,7 +35,7 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
 
     #img = cv2.imread(
     #    fpath, 0
-   # ) 
+    # ) 
     #print("img.shapeeeeeeeeeeeeeeeee")
     #print(img)
     ################################### for getting image from camera             #######################################
@@ -62,13 +57,11 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
                 min_tear_lenght=2,
                 tear_depth=570
             )
-   
     if len(pts) < 20:
                  pts = np.zeros((640, 2), dtype=np.int32)
                  pts[:, 0] = np.arange(0, len(pts))
                  pts[:, 1] = 618
 
-       
     # -----------------------------------------------------------------------
     res_y = ConvayerBase.moving_avrage(pts[:, 1], 10)    #self.MOVING_AVRAGE=10
     pts = pts[: res_y.shape[0]]
@@ -96,9 +89,8 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
     error_y[abs(error_y) <= 2] = 0
     
     normalized_error_y = error_y / MAX_ERROR * GRADIANT_SIZE // 2
-            # print(abs(error_y).max())
-           
-            # print(1/t)
+    # print(abs(error_y).max())         
+    # print(1/t)
 
     if frame_idx > res.shape[0] // step - step - 1:
                 frame_idx = res.shape[0] // step -step - 1
@@ -124,7 +116,7 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
             )
 
 
-            # max_depth=self.defect_tracker.get_defect_infoes(depth_img=self.depth_img,img=self.res)
+    # max_depth=self.defect_tracker.get_defect_infoes(depth_img=self.depth_img,img=self.res)
 
     frame_idx += 1
     defect_tracker.refresh(
@@ -172,6 +164,8 @@ def getDate():
     return str_date
 
 
+#db_Report = databaseManager("root", "dorsa-co", "localhost", "test_database")
+#defect_tracker = defectTracker(min_g_thresh=20, step_per_line=2, db_Report=db_Report)
 def linregress(pts):
         x = np.expand_dims(pts[:, 0], axis=-1)
         y = np.expand_dims(pts[:, 1], axis=-1)
@@ -185,3 +179,4 @@ def linregress(pts):
 
 def curve_function( x, a, b, c):
         return a * x**2 + b * x + c
+

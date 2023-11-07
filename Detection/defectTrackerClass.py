@@ -60,7 +60,8 @@ class defectTracker:
 
         cv2.drawContours(
             thresh_img, self.complete_defects_cnts, -1, color=0, thickness=-1
-        )
+        )           
+
         contours, _ = cv2.findContours(
             thresh_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
         )
@@ -123,7 +124,6 @@ class defectTracker:
                     str_date = date.today().strftime('%Y/%m/%d')
                     self.max_depth=abs(defect_roi).max()
                     self.db_Report.add_record(
-        
                         (
                             h_mm,
                             abs(defect_roi).max(),
@@ -133,7 +133,6 @@ class defectTracker:
                             path,
                         ),
                     )
-
                 else:
                     self.inprogress_defects_cnts.append(cnt)
                    
@@ -172,14 +171,14 @@ class defectTracker:
             x, y, w, h = cv2.boundingRect(cnt)
             # rand_color = np.random.randint(0, 255), np.random.randint(0, 255), np.random.randint(0, 255)
             cv2.rectangle(res, (x, y), (x + w, y + h), color=color, thickness=thickness)
-
             defect_roi = img[y : y + h, x : x + w]
             mean_intensity = defect_roi[defect_roi > 0].mean()
 
-        # for cnt in all_cnts2:
-        # x, y, w, h = cv2.boundingRect(cnt)
-        # Rand_color = np.random.randint(0, 255), np.random.randint(0, 255), np.random.randint(0, 255)
-        # cv2.rectangle(res, (x, y), (x + w, y + h), color=(0, 0, 0), thickness=-1)
+
+       ## for cnt in all_cnts2:
+       ##      x, y, w, h = cv2.boundingRect(cnt)
+            # Rand_color = np.random.randint(0, 255), np.random.randint(0, 255), np.random.randint(0, 255)
+       ##     cv2.rectangle(res, (x, y), (x + w, y + h), color=(0, 0, 0), thickness=-1)
 
         return res
 

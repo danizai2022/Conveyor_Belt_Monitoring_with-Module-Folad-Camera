@@ -102,7 +102,6 @@ class mainUI:
         else:
             self.ui.showMaximized()
 
-    
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

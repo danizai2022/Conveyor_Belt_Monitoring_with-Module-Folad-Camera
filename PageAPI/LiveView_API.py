@@ -29,7 +29,9 @@ class LiveView_API:
         self.pix_mm_width = 140 / 590
         self.CONVAYER_SPEED = 120  # mm/s
         self.pix_mm_length = self.step * self.CONVAYER_SPEED / 750
-        self.frame_idx = 0
+        self.frame_idx =  500 // self.step     #remove the error when the defect occur in th first place of frame
+        #self.frame_idx = 0    #get error when the defect occur in th first place of frame
+      
         self.db_Report=db_Report
         self.defect_tracker = defectTracker(min_g_thresh=20, step_per_line=2, db_Report=self.db_Report)
         self.parms_camera_liveView = {
