@@ -100,6 +100,8 @@ class LiveView_API:
     def show_farme_camera(self):  ###################  for getting image from  camera
         self.ui_live.disable_live()
         self.camera.Operations.start_grabbing()
+        self.camera.Parms.set_exposureTime(5000)
+        self.camera.Parms.set_gain(217)
         img = self.camera.getPictures()
         ###########res,img = self.cam.getPictures()
         idx=self.parms_camera_liveView["Exposure"]

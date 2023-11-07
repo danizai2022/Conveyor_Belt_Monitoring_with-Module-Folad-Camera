@@ -1,11 +1,11 @@
 
 class Report_DB:
-    TABLE_NAME = "report40"
+    TABLE_NAME = "report46"
 
     def __init__(self, db_manager):
         self.db_manager = db_manager
         #self.__create_table__()
-        self.TABLE_NAME="reports40"
+        self.TABLE_NAME="reports46"
 
     def __create_table__(
         self,

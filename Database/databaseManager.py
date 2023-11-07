@@ -1152,7 +1152,7 @@ class databaseManager:
 
 if __name__ == "__main__":
     db_manager = databaseManager("root", "dorsa-co", "localhost", "test_database")
-    TABLE_NAME = "reports4"
+    TABLE_NAME = "reports46"
     TABLE_COLS = [
         {"col_name": "Length", "type": "float(10,7)"},
         {"col_name": "Depth", "type": "float(10,7)"},
@@ -1161,22 +1161,19 @@ if __name__ == "__main__":
         {"col_name": "critical", "type": "float(10,7)"},
         {"col_name": "image_path", "type": "VARCHAR(255)", "len": 50},
     ]
-    db_manager.remove_record(TABLE_NAME, "Date", "2023/10/31")    # remove spesific data from table
+    ##db_manager.remove_record(TABLE_NAME, "Date", "2023/10/31")    # remove spesific data from table
     # records_Height = db_manager.search_interval(
     ##    TABLE_NAME, "Date", "1402-07-20", "1402-07-22"
     # )
     # print(len(records_Height))
 # print(records_Height)
 
-#########################################  db_manager.create_table(TABLE_NAME)   #Create table
+    db_manager.create_table(TABLE_NAME)   #Create table
 # PRIMERY_KEY_COL_NAME=
 
     ########################db_manager.create_table(TABLE_NAME)                             ######## Add column to the table
-    ##################################for col in TABLE_COLS:                                          ############## Add col to table      
-    ##############################   db_manager.add_column(TABLE_NAME, **col)                     ############## Add col to table
-
-
-
+    for col in TABLE_COLS:                                          ############## Add col to table      
+       db_manager.add_column(TABLE_NAME, **col)                     ############## Add col to table
 
 # db_manager.add_record(TABLE_NAME, (1.1, 2, 3, "2,2", 4))
 # db_manager.delete_table("reports16")
