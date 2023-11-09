@@ -18,10 +18,8 @@ class mainUI:
     :param QtWidgets: _description_
 
     """
-
     def __init__(self, ui):
         """this function is used to laod ui file and build GUI application"""
-
         self.ui = ui
         self.Page_LiveView = LiveView_UI(self.ui)
         self.Page_Report = Report_UI(self.ui)
@@ -30,6 +28,7 @@ class mainUI:
         self.common_func=Common_Function_UI()
         self.activate_()
         self.laod_table_parms()
+
 
     def laod_table_parms(self):
         # self.tableWidget.verticalHeader().setStretchLastSection(True)
@@ -45,6 +44,7 @@ class mainUI:
         header.setSectionResizeMode(7, QHeaderView.ResizeMode.Stretch)
         header.setDefaultAlignment(QtCore.Qt.AlignLeft)
         self.ui.tableWidget.setColumnWidth(0, 60)  
+
 
     def load_page(self):
         btn = self.ui.sender()

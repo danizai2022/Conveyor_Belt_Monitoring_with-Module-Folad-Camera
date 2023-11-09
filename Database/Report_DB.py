@@ -5,7 +5,7 @@ class Report_DB:
     def __init__(self, db_manager):
         self.db_manager = db_manager
         #self.__create_table__()
-        self.TABLE_NAME="reports46"
+        self.TABLE_NAME="reports76"
 
     def __create_table__(
         self,

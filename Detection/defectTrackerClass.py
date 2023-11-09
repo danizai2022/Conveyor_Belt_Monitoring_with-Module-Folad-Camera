@@ -121,7 +121,9 @@ class defectTracker:
                     # print(len(self.total_complete_defects_cnts))
                     self.number_of_defect = self.number_of_defect + 1
                     ###str_date = self.getDate_of_system()
-                    str_date = date.today().strftime('%Y/%m/%d')
+                    #str_date = date.today().strftime('%Y/%m/%d')    #This is used for getting the date and time in normal format
+                    str_date = date.today().strftime('%Y/%#m/%#d')   #This is used for getting the date and time in decimal format
+                    
                     self.max_depth=abs(defect_roi).max()
                     self.db_Report.add_record(
                         (

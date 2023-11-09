@@ -33,7 +33,6 @@ class AlgorithmCalibration_API:
         Param_of_Calibration=self.get_Calibration_parms()
         self.set_calibration_paprameter_on_main_API(Param_of_Calibration)
       
-
     def set_back_event_func(self,fun):
         self.set_calibration_paprameter_on_main_API=fun
 

@@ -32,6 +32,7 @@ class LiveView_API:
         self.frame_idx =  500 // self.step     #remove the error when the defect occur in th first place of frame
         #self.frame_idx = 0    #get error when the defect occur in th first place of frame
       
+      
         self.db_Report=db_Report
         self.defect_tracker = defectTracker(min_g_thresh=20, step_per_line=2, db_Report=self.db_Report)
         self.parms_camera_liveView = {
@@ -53,10 +54,10 @@ class LiveView_API:
                  
         ###################  self.camera = self.collector.get_camera_by_serial(str(self.parms_camera_liveView["Serial"]))
         self.camera = self.collector.get_camera_by_serial(str(23287291))    ###################  for getting image from  camera
-        self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
+       
        
         #self.cam = camera_connection.Collector(
-       #     str(23287291), 217, 5000, 640, 480, 16, 16
+        #     str(23287291), 217, 5000, 640, 480, 16, 16
         #)
         #self.result1, _ = self.cam.start_grabbing()
         self.button_connector()
@@ -101,59 +102,62 @@ class LiveView_API:
 
     def show_farme_camera(self):  ###################  for getting image from  camera
         self.ui_live.disable_live()
-        self.camera.Operations.start_grabbing()
-        self.camera.Parms.set_exposureTime(5000)
-        self.camera.Parms.set_gain(217)
-        img = self.camera.getPictures()
-        ###########res,img = self.cam.getPictures()
-        idx=self.parms_camera_liveView["Exposure"]
-        #print(img.shape)
-        self.frame_idx = self.frame_idx + 1
-        res_img, s, Number_Defect, Number_of_Critical_Defect = defect_detection(
-            self.frame_idx, img,idx,self.defect_tracker
-        )
-        styles_Live = {
-                "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
-                "Critical_live_view": "background-color:rgb(219, 219, 219) ",
-                "Normal_live_view": "background-color:rgb(47, 140, 68)",
-            }
-        self.ui_live.set_style_information(styles_Live)
+        if self.camera !=None:
+       
+            self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
+            self.camera.Operations.start_grabbing()
+            self.camera.Parms.set_exposureTime(5000)
+            self.camera.Parms.set_gain(417)  #217   +get the good answer
+            img = self.camera.getPictures()
+            ###########res,img = self.cam.getPictures()
+            idx=self.parms_camera_liveView["Exposure"]
+            #print(img.shape)
+            self.frame_idx = self.frame_idx + 1
+            res_img, s, Number_Defect, Number_of_Critical_Defect = defect_detection(
+                self.frame_idx, img,idx,self.defect_tracker
+            )
+            styles_Live = {
+                    "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
+                    "Critical_live_view": "background-color:rgb(219, 219, 219) ",
+                    "Normal_live_view": "background-color:rgb(47, 140, 68)",
+                }
+            self.ui_live.set_style_information(styles_Live)
 
 
-        if s != None:
-                infoes_Live = {
-                        "Length": "{:.2f}".format(float(s[3] * self.pix_mm_length))
-                        + " "
-                        + "mm",
-                        "Width": "{:.2f}".format(float(s[2] * self.pix_mm_width))
-                        + " "
-                        + "mm",
-                        "Depth": "{:.2f}".format(float(s[4])) + " " + "mm",
-                        #"Depth": "{:.2f}".format(float(max_depth)) + " " + "mm",
-                        "Total_Number_Defect": str(Number_Defect),
-                        "Total_Number_Critical_defect": str(Number_of_Critical_Defect),
-                    }
-                self.ui_live.set_general_information(infoes_Live)
-                #print(max_depth)
-                if float(s[4]) > 20:
-                        styles_Live = {
-                            "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
-                            "Critical_live_view": "background-color:rgb(218, 0, 0) ",
-                            "Normal_live_view": "background-color:rgb(219, 219, 219)",
+            if s != None:
+                    infoes_Live = {
+                            "Length": "{:.2f}".format(float(s[3] * self.pix_mm_length))
+                            + " "
+                            + "mm",
+                            "Width": "{:.2f}".format(float(s[2] * self.pix_mm_width))
+                            + " "
+                            + "mm",
+                            "Depth": "{:.2f}".format(float(s[4])) + " " + "mm",
+                            #"Depth": "{:.2f}".format(float(max_depth)) + " " + "mm",
+                            "Total_Number_Defect": str(Number_Defect),
+                            "Total_Number_Critical_defect": str(Number_of_Critical_Defect),
                         }
-                        self.ui_live.set_style_information(styles_Live)
+                    self.ui_live.set_general_information(infoes_Live)
+                    #print(max_depth)
+                    if float(s[4]) > 20:
+                            styles_Live = {
+                                "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
+                                "Critical_live_view": "background-color:rgb(218, 0, 0) ",
+                                "Normal_live_view": "background-color:rgb(219, 219, 219)",
+                            }
+                            self.ui_live.set_style_information(styles_Live)
 
-                else:
-                        styles_Live = {
-                            "Not_Critical_live_view": "background-color:rgb(213, 213, 0)",
-                            "Critical_live_view": "background-color:rgb(219, 219, 219) ",
-                            "Normal_live_view": "background-color:rgb(219, 219, 219)",
-                        }
-                        self.ui_live.set_style_information(styles_Live)
+                    else:
+                            styles_Live = {
+                                "Not_Critical_live_view": "background-color:rgb(213, 213, 0)",
+                                "Critical_live_view": "background-color:rgb(219, 219, 219) ",
+                                "Normal_live_view": "background-color:rgb(219, 219, 219)",
+                            }
+                            self.ui_live.set_style_information(styles_Live)
 
 
 
-        self.show_image(res_img)
+            self.show_image(res_img)
 
     def set_initial_param_calibration(self, param_cal):      
         self.set_calibration_parms_API(param_cal)

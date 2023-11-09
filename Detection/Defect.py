@@ -41,7 +41,6 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
     ################################### for getting image from camera             #######################################
     #img=fname
     if fname.ndim >2 :
-            # img=cv2.
             fname = cv2.cvtColor(fname, cv2.COLOR_BGR2GRAY)
     #img = fname[:, 100:620]
     img = fname[:, 25:620]
@@ -67,9 +66,9 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
     pts = pts[: res_y.shape[0]]
     pts[:, 1] = res_y
 
-            # -----------------------------------------------------------------------
-            # tck = interpolate.splrep(pts[:,0], pts[:,1])
-            # good_y = interpolate.splev(pts[:,0], tck).astype(np.int32)
+    # -----------------------------------------------------------------------
+    # track = interpolate.splrep(pts[:,0], pts[:,1])
+    # good_y = interpolate.splev(pts[:,0], tck).astype(np.int32)
     slope, intercept = linregress(pts)
     good_y = (pts[:, 0] * slope + intercept).astype(np.int32)
 
@@ -115,12 +114,11 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
                 error_y * pix_mm_depth
             )
 
-
     # max_depth=self.defect_tracker.get_defect_infoes(depth_img=self.depth_img,img=self.res)
 
     frame_idx += 1
     defect_tracker.refresh(
-               res, depth_img=depth_img, Critical_Depth1=7    #Critical_Depth=10
+               res, depth_img=depth_img, Critical_Depth1=7    # Critical_Depth=10
             )
     res_draw = defect_tracker.draw(res)
 
