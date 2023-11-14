@@ -347,13 +347,13 @@ QPushButton:hover{
         <widget class="QFrame" name="frame_43">
          <property name="minimumSize">
           <size>
-           <width>99</width>
+           <width>104</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>125</width>
+           <width>124</width>
            <height>16777215</height>
           </size>
          </property>
@@ -2454,7 +2454,7 @@ border: 3px solid back</string>
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
-                              <height>147</height>
+                              <height>151</height>
                              </size>
                             </property>
                             <property name="maximumSize">
@@ -2545,7 +2545,10 @@ border: no</string>
                                   </property>
                                   <property name="styleSheet">
                                    <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -2598,7 +2601,10 @@ border: no</string>
                                   </property>
                                   <property name="styleSheet">
                                    <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -2657,7 +2663,10 @@ border: no</string>
                                   </property>
                                   <property name="styleSheet">
                                    <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                   </property>
                                   <property name="maximum">
                                    <number>1000</number>
@@ -2688,7 +2697,7 @@ font-size:14px;</string>
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
-                              <height>454</height>
+                              <height>399</height>
                              </size>
                             </property>
                             <property name="styleSheet">
@@ -2775,7 +2784,7 @@ font: 12pt &quot;Mongolian Baiti&quot;;
 border: no</string>
                                      </property>
                                      <property name="text">
-                                      <string>Min Widtht</string>
+                                      <string>Min Width</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -2795,7 +2804,10 @@ border: no</string>
                                      </property>
                                      <property name="styleSheet">
                                       <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -2848,7 +2860,10 @@ font: 12pt &quot;Mongolian Baiti&quot;;
                                      </property>
                                      <property name="styleSheet">
                                       <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -2935,7 +2950,10 @@ border: no</string>
                                      </property>
                                      <property name="styleSheet">
                                       <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -2990,7 +3008,10 @@ border: no</string>
                                      </property>
                                      <property name="styleSheet">
                                       <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -3068,7 +3089,10 @@ border: no</string>
                                      </property>
                                      <property name="styleSheet">
                                       <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                      </property>
                                      <property name="maximum">
                                       <number>1000</number>
@@ -3104,7 +3128,7 @@ font: 12pt &quot;Mongolian Baiti&quot;;
 border: no</string>
                                      </property>
                                      <property name="text">
-                                      <string>Max Lenght</string>
+                                      <string>Max Length</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -3124,7 +3148,10 @@ border: no</string>
                                      </property>
                                      <property name="styleSheet">
                                       <string notr="true">background-color :rgb(219, 219, 219);
-font-size:14px;</string>
+font-size:14px;
+border-style: solid;
+border-width: 1;
+border-radius: 3;</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -3568,8 +3595,8 @@ font: 24pt &quot;Mongolian Baiti&quot;;</string>
                               <rect>
                                <x>0</x>
                                <y>0</y>
-                               <width>98</width>
-                               <height>39</height>
+                               <width>995</width>
+                               <height>660</height>
                               </rect>
                              </property>
                              <layout class="QHBoxLayout" name="horizontalLayout_57">
@@ -4820,7 +4847,7 @@ font: 16pt &quot;Mongolian Baiti&quot;;</string>
 border: 2px solid back</string>
                    </property>
                    <property name="currentIndex">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="tab">
                     <attribute name="title">
@@ -6168,8 +6195,8 @@ font: 26pt &quot;Mongolian Baiti&quot;;</string>
                         <rect>
                          <x>0</x>
                          <y>0</y>
-                         <width>98</width>
-                         <height>31</height>
+                         <width>1039</width>
+                         <height>690</height>
                         </rect>
                        </property>
                        <layout class="QHBoxLayout" name="horizontalLayout_13">
