@@ -1,12 +1,11 @@
 import pickle
 
-CALIBRATION_PICKLE_PATH = "backend\Calibration\dict.pickle"
+CALIBRATION_PICKLE_PATH = "backend\Critical_Defect\Critical_parameters"
 
 
 class AlgorithmCalibration_API:
 
     """Description of the code
-
     :param
     """
 
@@ -33,6 +32,7 @@ class AlgorithmCalibration_API:
         Param_of_Calibration=self.get_Calibration_parms()
         self.set_calibration_paprameter_on_main_API(Param_of_Calibration)
       
+
     def set_back_event_func(self,fun):
         self.set_calibration_paprameter_on_main_API=fun
 

@@ -28,7 +28,7 @@ class LiveView_API:
         self.pix_mm_depth = 0.34
         self.pix_mm_width = 140 / 590
         self.CONVAYER_SPEED = 120  # mm/s
-        self.pix_mm_length = self.step * self.CONVAYER_SPEED / 750
+        self.pix_mm_length = self.step * self.CONVAYER_SPEED / 400   #   750
         self.frame_idx =  500 // self.step     #remove the error when the defect occur in th first place of frame
         #self.frame_idx = 0    #get error when the defect occur in th first place of frame
       
@@ -45,11 +45,14 @@ class LiveView_API:
             "offsetY": 0,
         }
         self.parms_calibration_liveView = {
-            "GRADIENT_SIZE": 0,
-            "MAX_ERROR": 0,
-            "TEAR_DEPTH": 0,
-            "Critical_Depth": 0,
+            "Width_critical": 0,
+            "Depth_Critical": 0,
+            "Lenght_Critical": 0,
+            "Width_not_critical": 0,
+            "Depth_not_Critical":0,
+            "Lenght_not_Critical": 0,
         }
+
         self.collector = Collector()
                  
         ###################  self.camera = self.collector.get_camera_by_serial(str(self.parms_camera_liveView["Serial"]))
@@ -62,15 +65,27 @@ class LiveView_API:
         #self.result1, _ = self.cam.start_grabbing()
         self.button_connector()
         self.button_connector_QTimer()    ###################  for getting image from  camera
+        self.button_connector_Stop()
+         
 
-    def button_connector(self):
-        self.ui_live.button_connector()    ############## for getting image from camera
+    def button_connector(self,):
+        self.ui_live.button_connector(self.camera)    ############## for getting image from camera
         ########self.ui_live.button_connector(self.start_selection)  # for getting image from folder
 
     def button_connector_QTimer(
         self,
     ):  ###################  for getting image from camera
         self.ui_live.button_connector_QTimer(self.start_selection_camera)
+
+    def button_connector_Stop(
+      self,
+    ):  ###################  for getting image from camera
+        self.ui_live.button_connector_stop()
+
+    def stop_camera(self):
+        # print("hi")
+         self.camera.Operations.stop_grabbing()
+         #print(self.camera.Operations.stop_grabbing())
 
     def start_selection(self):
         self.show_farme()
@@ -100,21 +115,39 @@ class LiveView_API:
         bytes_per_line = ch * w
         self.ui_live.set_Pixmap(img.data, w, h, bytes_per_line)
 
-    def show_farme_camera(self):  ###################  for getting image from  camera
+    def show_farme_camera(self):  ###################  for getting image from  the camera
         self.ui_live.disable_live()
+        self.ui_live.enable_stop()
+
         if self.camera !=None:
-       
             self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
             self.camera.Operations.start_grabbing()
             self.camera.Parms.set_exposureTime(5000)
-            self.camera.Parms.set_gain(417)  #217   +get the good answer
+            self.camera.Parms.set_gain(517)  #217   #### get the good answer
             img = self.camera.getPictures()
-            ###########res,img = self.cam.getPictures()
-            idx=self.parms_camera_liveView["Exposure"]
-            #print(img.shape)
+            ###########  res,img = self.cam.getPictures()
+            idx_Width_critical=self.parms_calibration_liveView["Width_critical"]
+            idx_Depth_Critical=self.parms_calibration_liveView["Depth_Critical"]
+            idx_Lenght_Critical=self.parms_calibration_liveView["Lenght_Critical"]
+        
+
+            idx_Width_not_critical=self.parms_calibration_liveView["Width_not_critical"]
+            idx_Depth_not_Critical=self.parms_calibration_liveView["Depth_not_Critical"]
+            idx_Lenght_not_Critical=self.parms_calibration_liveView["Lenght_not_Critical"]
+
+
+            
+
+            idx_Width_not_critical_Max=self.parms_calibration_liveView["Width_not_critical_Max"]
+            idx_Depth_not_Critical_Max=self.parms_calibration_liveView["Depth_not_Critical_Max"]
+            idx_Lenght_not_Critical_Max=self.parms_calibration_liveView["lenght_not_critical_Max"]
+                
+            #print("idx of the Exposure")
+            #print(idx)
             self.frame_idx = self.frame_idx + 1
-            res_img, s, Number_Defect, Number_of_Critical_Defect = defect_detection(
-                self.frame_idx, img,idx,self.defect_tracker
+
+            res_img, s, Number_Defect, Number_of_Critical_Defect= defect_detection(
+                self.frame_idx, img,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,self.defect_tracker
             )
             styles_Live = {
                     "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
@@ -122,7 +155,6 @@ class LiveView_API:
                     "Normal_live_view": "background-color:rgb(47, 140, 68)",
                 }
             self.ui_live.set_style_information(styles_Live)
-
 
             if s != None:
                     infoes_Live = {
@@ -139,13 +171,15 @@ class LiveView_API:
                         }
                     self.ui_live.set_general_information(infoes_Live)
                     #print(max_depth)
-                    if float(s[4]) > 20:
-                            styles_Live = {
-                                "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
-                                "Critical_live_view": "background-color:rgb(218, 0, 0) ",
-                                "Normal_live_view": "background-color:rgb(219, 219, 219)",
-                            }
-                            self.ui_live.set_style_information(styles_Live)
+
+                    if float(s[4]) > idx_Depth_Critical and float(s[2] * self.pix_mm_width) > idx_Width_critical and  float(s[3] * self.pix_mm_length) > idx_Lenght_Critical:
+                        styles_Live = {
+                            "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
+                            "Critical_live_view": "background-color:rgb(218, 0, 0) ",
+                            "Normal_live_view": "background-color:rgb(219, 219, 219)",
+                        }
+                        self.ui_live.set_style_information(styles_Live)
+
 
                     else:
                             styles_Live = {
@@ -161,15 +195,19 @@ class LiveView_API:
 
     def set_initial_param_calibration(self, param_cal):      
         self.set_calibration_parms_API(param_cal)
-
+      
+       
 
     def set_param_calibration(self, param_cal):   
         self.set_calibration_parms_API(param_cal)
+      
+      
 
 
     def set_initial_param_camera(self, param_cam):   
         self.set_camera_parms_API(param_cam)
-
+        idx=self.parms_camera_liveView["Exposure"]
+     
 
     def set_param_camera(self, param_cam):  
        self.set_camera_parms_API(param_cam)

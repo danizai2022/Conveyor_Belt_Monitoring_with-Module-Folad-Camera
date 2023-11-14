@@ -31,7 +31,7 @@ class mainUI:
 
 
     def laod_table_parms(self):
-        # self.tableWidget.verticalHeader().setStretchLastSection(True)
+        #self.tableWidget.verticalHeader().setStretchLastSection(True)
         header = self.ui.tableWidget.horizontalHeader()
         self.ui.tableWidget.horizontalHeaderVisible = True
         #header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)

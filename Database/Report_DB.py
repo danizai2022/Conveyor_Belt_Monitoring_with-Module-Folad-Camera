@@ -45,8 +45,9 @@ class Report_DB:
     def remove_record(self,column_name, Select_ID):
 
         records = self.db_manager.remove_record(self.TABLE_NAME, column_name, Select_ID)
-  
-
+        return records
+    
+    
     def  search(self,column_name, Select_ID):
          records = self.db_manager.search(self.TABLE_NAME, column_name, Select_ID)
          return records

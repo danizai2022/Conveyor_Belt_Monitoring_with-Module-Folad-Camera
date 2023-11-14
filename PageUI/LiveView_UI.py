@@ -31,10 +31,14 @@ class LiveView_UI(Common_Function_UI):
 
         self.ui.Stop_connection.setEnabled(False)
         self.ui.live.setEnabled(False)
-
-    def button_connector(self):   # input fun for getting image from folder
+        self.ui.Stop.setEnabled(False)
+        self.camera_connection=False
+    def button_connector(self,camera_connection):   # input fun for getting image from folder
+        self.camera_connection=camera_connection
         self.ui.Camera_connection.clicked.connect(partial(self.connect_camera))
         self.ui.Stop_connection.clicked.connect(partial(self.disconnect_camera))
+       
+
        # self.ui.live.clicked.connect(
        #     fun
        # )  ###################  for getting image from  folder
@@ -49,6 +53,16 @@ class LiveView_UI(Common_Function_UI):
         self.Set_fn(fun)
         self.ui.live.clicked.connect(self.button_connector_QTimer_fun)
 
+    def button_connector_stop(self):
+        
+       self.ui.Stop.clicked.connect(self.stop_live)
+      
+
+    def stop_live(self):
+        self.picktimer.stop()
+        self.ui.live.setEnabled(True)
+        self.ui.Stop.setEnabled(False)
+
     def button_connector_QTimer_fun(self):
         fun = self.Get_fn()
         self.picktimer = QTimer()
@@ -56,31 +70,48 @@ class LiveView_UI(Common_Function_UI):
         self.picktimer.start()
 
     def connect_camera(self):
-        # print("connect_camera")
+        ##print("connect_camera")
         ##self.enable_disable_camera_btns(True)
-        self.ui.Camera_connection.setEnabled(False)
-        self.set_message(
+        if self.camera_connection !=None:
+           
+            self.ui.Camera_connection.setEnabled(False)
+            #self.camera_connection.Operations.start_grabbing()
+            self.set_message(
+                label_name=self.ui.Message_LiveView,
+                text="Connect to Camera Successfully",
+            )
+
+            self.ui.Stop_connection.setEnabled(True)
+            self.ui.live.setEnabled(True)
+
+        else :
+            self.set_message(
             label_name=self.ui.Message_LiveView,
-            text="Connect to Camera Successfully",
+            text="Please check the connection to the camera",
         )
-
-        self.ui.Stop_connection.setEnabled(True)
-        self.ui.live.setEnabled(True)
-
     def disable_live(self):
         self.ui.live.setEnabled(False)
 
-    def disconnect_camera(self):
-        # print("disconnect_camera")
-        # self.enable_disable_camera_btns(False)
-        self.ui.Camera_connection.setEnabled(True)
+    def enable_stop(self):
+        self.ui.Stop.setEnabled(True)
+
+
+    def disconnect_camera(self):  
+        
+        #print("disconnect_camera")
+        #self.enable_disable_camera_btns(False)
+        #print("self.camera_connection.Operations.stop_grabbing()")
+        #print(self.camera_connection.Operations.stop_grabbing())
+       
+        self.camera_connection.Operations.stop_grabbing()   ################################## Check whether is it work correct or not
+        #self.ui.Camera_connection.setEnabled(True)
         self.set_message(
             label_name=self.ui.Message_LiveView,
             text="Disconnect to Camera Successfully",
         )
-
         self.ui.live.setEnabled(False)
         self.ui.Stop_connection.setEnabled(False)
+        self.ui.Camera_connection.setEnabled(True)
 
     def set_general_information(self, infoes: dict):
         for name, value in infoes.items():

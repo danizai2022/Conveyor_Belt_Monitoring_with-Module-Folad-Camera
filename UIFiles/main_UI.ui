@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1396</width>
-    <height>869</height>
+    <width>1506</width>
+    <height>917</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -347,13 +347,13 @@ QPushButton:hover{
         <widget class="QFrame" name="frame_43">
          <property name="minimumSize">
           <size>
-           <width>90</width>
+           <width>99</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>80</width>
+           <width>125</width>
            <height>16777215</height>
           </size>
          </property>
@@ -394,14 +394,20 @@ QPushButton:pressed {
           <number>3</number>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_36">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
+          <property name="spacing">
            <number>6</number>
           </property>
+          <property name="leftMargin">
+           <number>19</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
           <property name="rightMargin">
-           <number>0</number>
+           <number>22</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
           </property>
           <item>
            <spacer name="verticalSpacer_2">
@@ -465,7 +471,7 @@ QPushButton:pressed {
            <widget class="QPushButton" name="LiveDetectionBT">
             <property name="maximumSize">
              <size>
-              <width>76</width>
+              <width>79</width>
               <height>76</height>
              </size>
             </property>
@@ -506,8 +512,8 @@ QPushButton:pressed {
             </property>
             <property name="iconSize">
              <size>
-              <width>46</width>
-              <height>46</height>
+              <width>52</width>
+              <height>51</height>
              </size>
             </property>
            </widget>
@@ -557,59 +563,8 @@ QPushButton:pressed {
             </property>
             <property name="iconSize">
              <size>
-              <width>46</width>
-              <height>46</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignHCenter">
-           <widget class="QPushButton" name="CameraSettingBT">
-            <property name="maximumSize">
-             <size>
-              <width>60</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="toolTip">
-             <string>Camera Setting</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	color: white;
-	padding: 5px;
-	font-size: 11pt;
-	font-weight: bold;
-	border-radius:7px;
-   background-color:#F1F0E8;
-}
-
-QPushButton:hover{
-	background: #a3a3a3;
-}
-
-QPushButton:disabled {
-    color: #8D8D8D;
-}
-
-QPushButton:pressed {
-	background: rgb(0, 0, 0);
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../icons/settings.png</normaloff>../icons/settings.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>46</width>
-              <height>46</height>
+              <width>51</width>
+              <height>51</height>
              </size>
             </property>
            </widget>
@@ -659,8 +614,59 @@ QPushButton:pressed {
             </property>
             <property name="iconSize">
              <size>
-              <width>46</width>
-              <height>46</height>
+              <width>51</width>
+              <height>51</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="CameraSettingBT">
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="toolTip">
+             <string>Camera Setting</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	color: white;
+	padding: 5px;
+	font-size: 11pt;
+	font-weight: bold;
+	border-radius:7px;
+   background-color:#F1F0E8;
+}
+
+QPushButton:hover{
+	background: #a3a3a3;
+}
+
+QPushButton:disabled {
+    color: #8D8D8D;
+}
+
+QPushButton:pressed {
+	background: rgb(0, 0, 0);
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../icons/settings.png</normaloff>../icons/settings.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>51</width>
+              <height>51</height>
              </size>
             </property>
            </widget>
@@ -842,7 +848,7 @@ QPushButton:pressed {
                         <widget class="QGroupBox" name="groupBox_7">
                          <property name="styleSheet">
                           <string notr="true">font: 18pt &quot;Mongolian Baiti&quot;;
-border: 2px solid back</string>
+border: 3px solid back</string>
                          </property>
                          <property name="title">
                           <string>System Status</string>
@@ -1135,7 +1141,7 @@ border: no</string>
                          </property>
                          <property name="styleSheet">
                           <string notr="true">font: 18pt &quot;Mongolian Baiti&quot;;
-border: 2px solid back;
+border: 3px solid back;
 </string>
                          </property>
                          <property name="title">
@@ -1662,6 +1668,47 @@ QPushButton:pressed {
                            </widget>
                           </item>
                           <item>
+                           <widget class="QPushButton" name="Stop">
+                            <property name="styleSheet">
+                             <string notr="true">
+QPushButton{
+	color: white;
+    background-color:#F1F0E8;
+	padding: 5px;
+	font-size: 11pt;
+	font-weight: bold;
+	border-radius:7px;
+background-color:transparent;
+}
+
+QPushButton:hover{
+	background: #a3a3a3;
+}
+
+QPushButton:disabled {
+    color: #8D8D8D;
+}
+
+QPushButton:pressed {
+	background: rgb(0, 0, 0);
+}</string>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="icon">
+                             <iconset>
+                              <normaloff>../icons/stop-button2.png</normaloff>../icons/stop-button2.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>29</width>
+                              <height>26</height>
+                             </size>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
                            <spacer name="horizontalSpacer_2">
                             <property name="orientation">
                              <enum>Qt::Horizontal</enum>
@@ -1731,8 +1778,8 @@ font: 23pt &quot;Mongolian Baiti&quot;;</string>
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>997</width>
-                            <height>393</height>
+                            <width>1090</width>
+                            <height>441</height>
                            </rect>
                           </property>
                           <layout class="QHBoxLayout" name="horizontalLayout_30">
@@ -2349,323 +2396,783 @@ font: 16pt &quot;Mongolian Baiti&quot;;</string>
                      <number>10</number>
                     </property>
                     <item>
-                     <widget class="QFrame" name="frame_15">
+                     <widget class="QFrame" name="frame_14">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>307</width>
+                        <height>0</height>
+                       </size>
+                      </property>
                       <property name="maximumSize">
                        <size>
-                        <width>266</width>
+                        <width>353</width>
                         <height>16777215</height>
                        </size>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Mongolian Baiti&quot;;
+border: 3px solid back</string>
+                      </property>
                       <property name="frameShape">
-                       <enum>QFrame::Panel</enum>
+                       <enum>QFrame::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
-                       <enum>QFrame::Plain</enum>
+                       <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_6">
+                      <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
-                        <widget class="QGroupBox" name="groupBox_6">
+                        <widget class="QGroupBox" name="groupBox_12">
                          <property name="styleSheet">
-                          <string notr="true">font: 18pt &quot;Mongolian Baiti&quot;;
-border: 2px solid back</string>
+                          <string notr="true">font: 14pt &quot;Mongolian Baiti&quot;;
+border: 3px solid back</string>
                          </property>
                          <property name="title">
-                          <string>Algorithm Parametrs</string>
+                          <string>Defect Parameters</string>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_2">
+                         <layout class="QVBoxLayout" name="verticalLayout_21">
                           <item>
-                           <layout class="QFormLayout" name="formLayout_6">
-                            <item row="0" column="1">
-                             <spacer name="verticalSpacer_6">
-                              <property name="orientation">
-                               <enum>Qt::Vertical</enum>
-                              </property>
-                              <property name="sizeType">
-                               <enum>QSizePolicy::Fixed</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>20</width>
-                                <height>60</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item row="1" column="1">
-                             <widget class="QFrame" name="frame_22">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>0</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>50</height>
-                               </size>
-                              </property>
-                              <property name="frameShape">
-                               <enum>QFrame::StyledPanel</enum>
-                              </property>
-                              <property name="frameShadow">
-                               <enum>QFrame::Raised</enum>
-                              </property>
-                              <layout class="QHBoxLayout" name="horizontalLayout_34">
-                               <item>
-                                <widget class="QLabel" name="label_23">
-                                 <property name="styleSheet">
-                                  <string notr="true">font-size:18px;
+                           <spacer name="verticalSpacer_20">
+                            <property name="orientation">
+                             <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>20</width>
+                              <height>78</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QGroupBox" name="groupBox_13">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>147</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 14pt &quot;Mongolian Baiti&quot;;
+border:3px solid back</string>
+                            </property>
+                            <property name="title">
+                             <string>Critical Defect</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_25">
+                             <item>
+                              <spacer name="verticalSpacer_29">
+                               <property name="orientation">
+                                <enum>Qt::Vertical</enum>
+                               </property>
+                               <property name="sizeType">
+                                <enum>QSizePolicy::Fixed</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>20</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_21">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>41</height>
+                                </size>
+                               </property>
+                               <property name="baseSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border:no</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_72">
+                                <item>
+                                 <widget class="QLabel" name="label_51">
+                                  <property name="styleSheet">
+                                   <string notr="true">font-size:18px;
 font: 12pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                                 </property>
-                                 <property name="text">
-                                  <string>GRADIENT_SIZE</string>
-                                 </property>
-                                </widget>
-                               </item>
-                               <item>
-                                <widget class="QSpinBox" name="SpinBox_GRADIENT_SIZE">
-                                 <property name="minimumSize">
-                                  <size>
-                                   <width>45</width>
-                                   <height>0</height>
-                                  </size>
-                                 </property>
-                                 <property name="maximumSize">
-                                  <size>
-                                   <width>45</width>
-                                   <height>16777215</height>
-                                  </size>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Min Width </string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="Width_critical">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>45</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>56</width>
+                                    <height>24</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 font-size:14px;</string>
-                                 </property>
-                                 <property name="maximum">
-                                  <number>1000</number>
-                                 </property>
-                                </widget>
-                               </item>
-                              </layout>
-                             </widget>
-                            </item>
-                            <item row="2" column="1">
-                             <widget class="QFrame" name="frame_26">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>50</height>
-                               </size>
-                              </property>
-                              <property name="frameShape">
-                               <enum>QFrame::StyledPanel</enum>
-                              </property>
-                              <property name="frameShadow">
-                               <enum>QFrame::Raised</enum>
-                              </property>
-                              <layout class="QHBoxLayout" name="horizontalLayout_37">
-                               <item>
-                                <widget class="QLabel" name="label_9">
-                                 <property name="styleSheet">
-                                  <string notr="true">font-size:18px;
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_83">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>39</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border:no</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_74">
+                                <item>
+                                 <widget class="QLabel" name="label_52">
+                                  <property name="styleSheet">
+                                   <string notr="true">font-size:18px;
 font: 12pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                                 </property>
-                                 <property name="text">
-                                  <string>Critical_Depth</string>
-                                 </property>
-                                </widget>
-                               </item>
-                               <item>
-                                <widget class="QSpinBox" name="SpinBox_Critical_Depth">
-                                 <property name="maximumSize">
-                                  <size>
-                                   <width>45</width>
-                                   <height>16777215</height>
-                                  </size>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Min Depth </string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="Depth_Critical">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>45</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>56</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 font-size:14px;</string>
-                                 </property>
-                                 <property name="maximum">
-                                  <number>1000</number>
-                                 </property>
-                                </widget>
-                               </item>
-                              </layout>
-                             </widget>
-                            </item>
-                            <item row="3" column="1">
-                             <widget class="QFrame" name="frame_24">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>0</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>50</height>
-                               </size>
-                              </property>
-                              <property name="frameShape">
-                               <enum>QFrame::StyledPanel</enum>
-                              </property>
-                              <property name="frameShadow">
-                               <enum>QFrame::Raised</enum>
-                              </property>
-                              <layout class="QHBoxLayout" name="horizontalLayout_36">
-                               <item>
-                                <widget class="QLabel" name="label_13">
-                                 <property name="minimumSize">
-                                  <size>
-                                   <width>0</width>
-                                   <height>20</height>
-                                  </size>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">font-size:18px;
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_30">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>43</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border:no</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_73">
+                                <item>
+                                 <widget class="QLabel" name="label_50">
+                                  <property name="styleSheet">
+                                   <string notr="true">font-size:18px;
 font: 12pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                                 </property>
-                                 <property name="text">
-                                  <string>TEAR_DEPTH</string>
-                                 </property>
-                                </widget>
-                               </item>
-                               <item>
-                                <widget class="QSpinBox" name="SpinBox_TEAR_DEPTH">
-                                 <property name="maximumSize">
-                                  <size>
-                                   <width>45</width>
-                                   <height>16777215</height>
-                                  </size>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Min Length</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="Lenght_Critical">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>45</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>56</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 font-size:14px;</string>
-                                 </property>
-                                 <property name="maximum">
-                                  <number>1000</number>
-                                 </property>
-                                </widget>
-                               </item>
-                              </layout>
-                             </widget>
-                            </item>
-                            <item row="4" column="1">
-                             <widget class="QFrame" name="frame_23">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>0</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>50</height>
-                               </size>
-                              </property>
-                              <property name="frameShape">
-                               <enum>QFrame::StyledPanel</enum>
-                              </property>
-                              <property name="frameShadow">
-                               <enum>QFrame::Raised</enum>
-                              </property>
-                              <layout class="QHBoxLayout" name="horizontalLayout_35">
-                               <item>
-                                <widget class="QLabel" name="label_19">
-                                 <property name="styleSheet">
-                                  <string notr="true">font-size:18px;
+                                  </property>
+                                  <property name="maximum">
+                                   <number>1000</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item>
+                           <spacer name="verticalSpacer_24">
+                            <property name="orientation">
+                             <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>20</width>
+                              <height>80</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QGroupBox" name="groupBox_14">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>454</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 14pt &quot;Mongolian Baiti&quot;;
+border:3px solid back</string>
+                            </property>
+                            <property name="title">
+                             <string>Not Critical Defect</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_26">
+                             <item>
+                              <spacer name="verticalSpacer_30">
+                               <property name="orientation">
+                                <enum>Qt::Vertical</enum>
+                               </property>
+                               <property name="sizeType">
+                                <enum>QSizePolicy::Fixed</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>20</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item>
+                              <widget class="QGroupBox" name="groupBox_6">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>86</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>125</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">font: 12pt &quot;Mongolian Baiti&quot;;
+border:3px solid back</string>
+                               </property>
+                               <property name="title">
+                                <string>Width of Defect</string>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_2">
+                                <item>
+                                 <widget class="QFrame" name="frame_86">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>32</height>
+                                   </size>
+                                  </property>
+                                  <property name="baseSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">border: no</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_76">
+                                   <item>
+                                    <widget class="QLabel" name="label_53">
+                                     <property name="styleSheet">
+                                      <string notr="true">font-size:18px;
 font: 12pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                                 </property>
-                                 <property name="text">
-                                  <string>MAX_ERROR</string>
-                                 </property>
-                                </widget>
-                               </item>
-                               <item>
-                                <widget class="QSpinBox" name="SpinBox_MAX_ERROR">
-                                 <property name="maximumSize">
-                                  <size>
-                                   <width>45</width>
-                                   <height>16777215</height>
-                                  </size>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">background-color :rgb(219, 219, 219);
+                                     </property>
+                                     <property name="text">
+                                      <string>Min Widtht</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QSpinBox" name="Width_not_critical">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>45</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>56</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">background-color :rgb(219, 219, 219);
 font-size:14px;</string>
-                                 </property>
-                                 <property name="maximum">
-                                  <number>1000</number>
-                                 </property>
-                                </widget>
-                               </item>
-                              </layout>
-                             </widget>
-                            </item>
-                            <item row="5" column="1">
-                             <spacer name="verticalSpacer_11">
-                              <property name="orientation">
-                               <enum>Qt::Vertical</enum>
-                              </property>
-                              <property name="sizeType">
-                               <enum>QSizePolicy::Fixed</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>20</width>
-                                <height>60</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item row="6" column="1">
-                             <widget class="QFrame" name="frame_18">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>0</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>100</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">border:no;
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_15">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>31</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">border: no</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_31">
+                                   <item>
+                                    <widget class="QLabel" name="label_9">
+                                     <property name="styleSheet">
+                                      <string notr="true">font-size:18px;
+font: 12pt &quot;Mongolian Baiti&quot;;
+</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Max Width </string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QSpinBox" name="Width_not_critical_Max">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>45</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>56</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">background-color :rgb(219, 219, 219);
+font-size:14px;</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QGroupBox" name="groupBox_15">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>81</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>126</height>
+                                </size>
+                               </property>
+                               <property name="baseSize">
+                                <size>
+                                 <width>1</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">font: 12pt &quot;Mongolian Baiti&quot;;
+border: 3px solid back</string>
+                               </property>
+                               <property name="title">
+                                <string>Depth of Defect</string>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_6">
+                                <item>
+                                 <widget class="QFrame" name="frame_87">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>34</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">font-size:18px;
+font: 12pt &quot;Mongolian Baiti&quot;;
+border: no
+</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_77">
+                                   <item>
+                                    <widget class="QLabel" name="label_54">
+                                     <property name="styleSheet">
+                                      <string notr="true">font-size:18px;
+font: 12pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Min Depth </string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QSpinBox" name="Depth_not_Critical">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>45</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>56</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">background-color :rgb(219, 219, 219);
+font-size:14px;</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_17">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>34</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">font-size:18px;
+font: 12pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_34">
+                                   <item>
+                                    <widget class="QLabel" name="label_13">
+                                     <property name="styleSheet">
+                                      <string notr="true">font-size:18px;
+font: 12pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Max Depth </string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QSpinBox" name="Depth_not_Critical_Max">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>45</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>55</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">background-color :rgb(219, 219, 219);
+font-size:14px;</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QGroupBox" name="groupBox_16">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>126</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">font: 12pt &quot;Mongolian Baiti&quot;;
+border: 3px solid back</string>
+                               </property>
+                               <property name="title">
+                                <string>Lenght of Defect</string>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_27">
+                                <item>
+                                 <widget class="QFrame" name="frame_88">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>39</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">border: no</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_78">
+                                   <item>
+                                    <widget class="QLabel" name="label_55">
+                                     <property name="styleSheet">
+                                      <string notr="true">font-size:18px;
+font: 12pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Min Length </string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QSpinBox" name="lenght_not_critical">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>45</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>56</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">background-color :rgb(219, 219, 219);
+font-size:14px;</string>
+                                     </property>
+                                     <property name="maximum">
+                                      <number>1000</number>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_18">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">border: no</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_32">
+                                   <item>
+                                    <widget class="QLabel" name="label_19">
+                                     <property name="styleSheet">
+                                      <string notr="true">font-size:18px;
+font: 12pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Max Lenght</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QSpinBox" name="lenght_not_critical_Max">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>56</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">background-color :rgb(219, 219, 219);
+font-size:14px;</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item>
+                           <spacer name="verticalSpacer_22">
+                            <property name="orientation">
+                             <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>20</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QFrame" name="frame_84">
+                            <property name="styleSheet">
+                             <string notr="true">border:no;
 font: 12pt &quot;Mongolian Baiti&quot;;</string>
-                              </property>
-                              <property name="frameShape">
-                               <enum>QFrame::StyledPanel</enum>
-                              </property>
-                              <property name="frameShadow">
-                               <enum>QFrame::Raised</enum>
-                              </property>
-                              <layout class="QHBoxLayout" name="horizontalLayout_32">
-                               <item>
-                                <widget class="QFrame" name="frame_17">
-                                 <property name="maximumSize">
-                                  <size>
-                                   <width>150</width>
-                                   <height>50</height>
-                                  </size>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">QFrame{
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_79">
+                             <item>
+                              <widget class="QFrame" name="frame_85">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>180</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QFrame{
 	background: #0C356A;
   border-radius:5px;
 }
@@ -2674,33 +3181,18 @@ font: 12pt &quot;Mongolian Baiti&quot;;</string>
 
 
 </string>
-                                 </property>
-                                 <property name="frameShape">
-                                  <enum>QFrame::Box</enum>
-                                 </property>
-                                 <property name="frameShadow">
-                                  <enum>QFrame::Raised</enum>
-                                 </property>
-                                 <property name="lineWidth">
-                                  <number>3</number>
-                                 </property>
-                                 <layout class="QHBoxLayout" name="horizontalLayout_31">
-                                  <item>
-                                   <widget class="QPushButton" name="Save_Calibration">
-                                    <property name="maximumSize">
-                                     <size>
-                                      <width>130</width>
-                                      <height>100</height>
-                                     </size>
-                                    </property>
-                                    <property name="cursor">
-                                     <cursorShape>PointingHandCursor</cursorShape>
-                                    </property>
-                                    <property name="toolTip">
-                                     <string>Save Parameters</string>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_75">
+                                <item>
+                                 <widget class="QPushButton" name="Save_Calibration">
+                                  <property name="styleSheet">
+                                   <string notr="true">
 QPushButton{
 	color: white;
     background-color:#0C356A;
@@ -2722,54 +3214,40 @@ QPushButton:disabled {
 QPushButton:pressed {
 	background: rgb(0, 0, 0);
 }</string>
-                                    </property>
-                                    <property name="text">
-                                     <string>Save Prameters</string>
-                                    </property>
-                                    <property name="icon">
-                                     <iconset>
-                                      <normaloff>../icons/save.png</normaloff>../icons/save.png</iconset>
-                                    </property>
-                                    <property name="iconSize">
-                                     <size>
-                                      <width>36</width>
-                                      <height>20</height>
-                                     </size>
-                                    </property>
-                                    <property name="shortcut">
-                                     <string>Ctrl+S</string>
-                                    </property>
-                                   </widget>
-                                  </item>
-                                 </layout>
-                                </widget>
-                               </item>
-                              </layout>
-                             </widget>
-                            </item>
-                            <item row="7" column="1">
-                             <spacer name="verticalSpacer_10">
-                              <property name="orientation">
-                               <enum>Qt::Vertical</enum>
-                              </property>
-                              <property name="sizeType">
-                               <enum>QSizePolicy::Fixed</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>20</width>
-                                <height>60</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                           </layout>
+                                  </property>
+                                  <property name="text">
+                                   <string>Save Defect Parameters</string>
+                                  </property>
+                                  <property name="icon">
+                                   <iconset>
+                                    <normaloff>../icons/save.png</normaloff>../icons/save.png</iconset>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item>
+                           <spacer name="verticalSpacer_21">
+                            <property name="orientation">
+                             <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>20</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                           </spacer>
                           </item>
                          </layout>
                         </widget>
                        </item>
                        <item>
-                        <spacer name="verticalSpacer_12">
+                        <spacer name="verticalSpacer_23">
                          <property name="orientation">
                           <enum>Qt::Vertical</enum>
                          </property>
@@ -2791,6 +3269,18 @@ QPushButton:pressed {
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">font-size:17px;</string>
@@ -3078,8 +3568,8 @@ font: 24pt &quot;Mongolian Baiti&quot;;</string>
                               <rect>
                                <x>0</x>
                                <y>0</y>
-                               <width>989</width>
-                               <height>612</height>
+                               <width>98</width>
+                               <height>39</height>
                               </rect>
                              </property>
                              <layout class="QHBoxLayout" name="horizontalLayout_57">
@@ -3254,7 +3744,7 @@ font: 16pt &quot;Mongolian Baiti&quot;;</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">font: 18pt &quot;Mongolian Baiti&quot;;
-border: 2px solid back</string>
+border: 3px solid back</string>
                    </property>
                    <property name="title">
                     <string>Show All Defects</string>
@@ -4144,7 +4634,7 @@ font: 26pt &quot;Mongolian Baiti&quot;;</string>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Image of Defect</string>
+                           <string>Image of  Defect</string>
                           </property>
                           <property name="textAlignment">
                            <set>AlignCenter</set>
@@ -4309,7 +4799,7 @@ font: 16pt &quot;Mongolian Baiti&quot;;</string>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>285</width>
+                  <width>306</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -4322,473 +4812,509 @@ font: 16pt &quot;Mongolian Baiti&quot;;</string>
                 <property name="lineWidth">
                  <number>4</number>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_45">
+                <layout class="QHBoxLayout" name="horizontalLayout_70">
                  <item>
-                  <widget class="QGroupBox" name="groupBox_8">
+                  <widget class="QTabWidget" name="tabWidget">
                    <property name="styleSheet">
-                    <string notr="true">font: 20pt &quot;Mongolian Baiti&quot;;
+                    <string notr="true">font: 12pt &quot;Mongolian Baiti&quot;;
 border: 2px solid back</string>
                    </property>
-                   <property name="title">
-                    <string>Camera Parameters</string>
+                   <property name="currentIndex">
+                    <number>1</number>
                    </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_8">
-                    <item>
-                     <widget class="QFrame" name="frame_55">
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>500</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">border:no;
+                   <widget class="QWidget" name="tab">
+                    <attribute name="title">
+                     <string>First_Camera</string>
+                    </attribute>
+                    <layout class="QHBoxLayout" name="horizontalLayout_21">
+                     <item>
+                      <widget class="QGroupBox" name="groupBox_8">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>726</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 20pt &quot;Mongolian Baiti&quot;;
+border: 3px solid back</string>
+                       </property>
+                       <property name="title">
+                        <string>Camera Parameters</string>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_8">
+                        <item>
+                         <spacer name="verticalSpacer_25">
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeType">
+                           <enum>QSizePolicy::Fixed</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>20</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_55">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>500</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">border:no;
 font: 12pt &quot;Mongolian Baiti&quot;;</string>
-                      </property>
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_19">
-                       <item>
-                        <layout class="QGridLayout" name="gridLayout_2">
-                         <item row="5" column="0" colspan="2">
-                          <widget class="QFrame" name="frame_52">
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 2px solid back</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_47">
-                            <item>
-                             <widget class="QLabel" name="label_17">
-                              <property name="styleSheet">
-                               <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_19">
+                           <item>
+                            <layout class="QGridLayout" name="gridLayout_2">
+                             <item row="5" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_52">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_47">
+                                <item>
+                                 <widget class="QLabel" name="label_17">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                              </property>
-                              <property name="text">
-                               <string>Offset X</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QSpinBox" name="offsetx_spinbox">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>33</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Offset X</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="offsetx_spinbox">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 border-style: solid;
 border-width: 1;
 border-radius: 3;
 font-size:18px;</string>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                         <item row="0" column="0" colspan="2">
-                          <widget class="QFrame" name="frame_46">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 2px solid back</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_16">
-                            <item>
-                             <widget class="QLabel" name="label_11">
-                              <property name="styleSheet">
-                               <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="0" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_46">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_16">
+                                <item>
+                                 <widget class="QLabel" name="label_11">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                              </property>
-                              <property name="text">
-                               <string>Serial Number</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLabel" name="serial_number_spinBox">
-                              <property name="styleSheet">
-                               <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Serial Number</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QLabel" name="serial_number_spinBox">
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 border-style: solid;
 border-width: 1;
 border-radius: 3;
 font-size:18px;</string>
-                              </property>
-                              <property name="text">
-                               <string/>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                         <item row="4" column="0" colspan="2">
-                          <widget class="QFrame" name="frame_50">
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 2px solid back</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_46">
-                            <item>
-                             <widget class="QLabel" name="label_16">
-                              <property name="styleSheet">
-                               <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+                                  </property>
+                                  <property name="text">
+                                   <string/>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="4" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_50">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_46">
+                                <item>
+                                 <widget class="QLabel" name="label_16">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                              </property>
-                              <property name="text">
-                               <string>Exposure</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QSpinBox" name="expo_spinbox">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>33</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Exposure</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="expo_spinbox">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 border-style: solid;
 border-width: 1;
 border-radius: 3;
 font-size:18px;</string>
-                              </property>
-                              <property name="maximum">
-                               <number>10000000</number>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                         <item row="6" column="0" colspan="2">
-                          <widget class="QFrame" name="frame_54">
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 2px solid back</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_48">
-                            <item>
-                             <widget class="QLabel" name="label_18">
-                              <property name="styleSheet">
-                               <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+                                  </property>
+                                  <property name="maximum">
+                                   <number>10000000</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="6" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_54">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_48">
+                                <item>
+                                 <widget class="QLabel" name="label_18">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                              </property>
-                              <property name="text">
-                               <string>Offset Y</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QSpinBox" name="offsety_spinbox">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>33</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Offset Y</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="offsety_spinbox">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 border-style: solid;
 border-width: 1;
 border-radius: 3;
 font-size:18px;</string>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                         <item row="1" column="0" colspan="2">
-                          <widget class="QFrame" name="frame_47">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 2px solid back</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_43">
-                            <item>
-                             <widget class="QLabel" name="label_12">
-                              <property name="styleSheet">
-                               <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="1" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_47">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_43">
+                                <item>
+                                 <widget class="QLabel" name="label_12">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                              </property>
-                              <property name="text">
-                               <string>Height</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QSpinBox" name="height_spinbox">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>33</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Height</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="height_spinbox">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 border-style: solid;
 border-width: 1;
 border-radius: 3;
 font-size:18px;</string>
-                              </property>
-                              <property name="maximum">
-                               <number>100000</number>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                         <item row="3" column="0" colspan="2">
-                          <widget class="QFrame" name="frame_49">
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 2px solid back</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_45">
-                            <item>
-                             <widget class="QLabel" name="label_15">
-                              <property name="styleSheet">
-                               <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+                                  </property>
+                                  <property name="maximum">
+                                   <number>100000</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="3" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_49">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_45">
+                                <item>
+                                 <widget class="QLabel" name="label_15">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                              </property>
-                              <property name="text">
-                               <string>Gain</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QSpinBox" name="gain_spinbox">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>33</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Gain</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="gain_spinbox">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 border-style: solid;
 border-width: 1;
 border-radius: 3;
 font-size:18px;</string>
-                              </property>
-                              <property name="maximum">
-                               <number>400</number>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                         <item row="2" column="0" colspan="2">
-                          <widget class="QFrame" name="frame_48">
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 2px solid back</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_44">
-                            <item>
-                             <widget class="QLabel" name="label_14">
-                              <property name="styleSheet">
-                               <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+                                  </property>
+                                  <property name="maximum">
+                                   <number>400</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="2" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_48">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_44">
+                                <item>
+                                 <widget class="QLabel" name="label_14">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
 border: no</string>
-                              </property>
-                              <property name="text">
-                               <string>Width</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QSpinBox" name="width_spinbox">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>33</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">background-color :rgb(219, 219, 219);
+                                  </property>
+                                  <property name="text">
+                                   <string>Width</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="width_spinbox">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
 border-style: solid;
 border-width: 1;
 border-radius: 3;
 font-size:18px;</string>
-                              </property>
-                              <property name="maximum">
-                               <number>10000</number>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                        </layout>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_45">
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>61</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">border:no;
+                                  </property>
+                                  <property name="maximum">
+                                   <number>10000</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_45">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>61</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">border:no;
 font: 12pt &quot;Mongolian Baiti&quot;;</string>
-                      </property>
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_55">
-                       <item>
-                        <widget class="QFrame" name="frame_56">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>36</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>150</width>
-                           <height>59</height>
-                          </size>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">QFrame{
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_55">
+                           <item>
+                            <widget class="QFrame" name="frame_56">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>36</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>150</width>
+                               <height>59</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QFrame{
 	background: #0C356A;
 border-radius:5px;
 }
 </string>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::Box</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <property name="lineWidth">
-                          <number>3</number>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_18">
-                          <item>
-                           <widget class="QPushButton" name="Save_Camera_Parameters">
-                            <property name="maximumSize">
-                             <size>
-                              <width>120</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="cursor">
-                             <cursorShape>PointingHandCursor</cursorShape>
-                            </property>
-                            <property name="toolTip">
-                             <string>Save Parameters</string>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QPushButton{
+                             </property>
+                             <property name="frameShape">
+                              <enum>QFrame::Box</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Raised</enum>
+                             </property>
+                             <property name="lineWidth">
+                              <number>3</number>
+                             </property>
+                             <layout class="QHBoxLayout" name="horizontalLayout_18">
+                              <item>
+                               <widget class="QPushButton" name="Save_Camera_Parameters">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>120</width>
+                                  <height>16777215</height>
+                                 </size>
+                                </property>
+                                <property name="cursor">
+                                 <cursorShape>PointingHandCursor</cursorShape>
+                                </property>
+                                <property name="toolTip">
+                                 <string>Save Parameters</string>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">QPushButton{
 	color: white;
     background-color:#0C356A;
 	padding: 5px;
@@ -4811,45 +5337,610 @@ QPushButton:pressed {
 }
 
 </string>
-                            </property>
-                            <property name="text">
-                             <string>Save Prameters</string>
-                            </property>
-                            <property name="icon">
-                             <iconset>
-                              <normaloff>../icons/save.png</normaloff>../icons/save.png</iconset>
-                            </property>
-                            <property name="iconSize">
-                             <size>
-                              <width>26</width>
-                              <height>26</height>
-                             </size>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frame_21">
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>100</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
+                                </property>
+                                <property name="text">
+                                 <string>Save Prameters</string>
+                                </property>
+                                <property name="icon">
+                                 <iconset>
+                                  <normaloff>../icons/save.png</normaloff>../icons/save.png</iconset>
+                                </property>
+                                <property name="iconSize">
+                                 <size>
+                                  <width>26</width>
+                                  <height>26</height>
+                                 </size>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="verticalSpacer_26">
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeType">
+                           <enum>QSizePolicy::Expanding</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>20</width>
+                            <height>40</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="tab_2">
+                    <attribute name="title">
+                     <string>Second_Camera</string>
+                    </attribute>
+                    <layout class="QHBoxLayout" name="horizontalLayout_71">
+                     <item>
+                      <widget class="QGroupBox" name="groupBox_11">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>700</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 20pt &quot;Mongolian Baiti&quot;;
+border: 3px solid back</string>
+                       </property>
+                       <property name="title">
+                        <string>Camera Parameters</string>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_19">
+                        <item>
+                         <spacer name="verticalSpacer_27">
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeType">
+                           <enum>QSizePolicy::Fixed</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>20</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_70">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>500</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">border:no;
+font: 12pt &quot;Mongolian Baiti&quot;;</string>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_58">
+                           <item>
+                            <layout class="QGridLayout" name="gridLayout_4">
+                             <item row="5" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_71">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_59">
+                                <item>
+                                 <widget class="QLabel" name="label_40">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Offset X</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="offsetx_spinbox_2">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="0" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_72">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_62">
+                                <item>
+                                 <widget class="QLabel" name="label_42">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Serial Number</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QLabel" name="serial_number_spinBox_2">
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                                  </property>
+                                  <property name="text">
+                                   <string/>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="4" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_73">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_63">
+                                <item>
+                                 <widget class="QLabel" name="label_44">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Exposure</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="expo_spinbox_2">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>33</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                                  </property>
+                                  <property name="maximum">
+                                   <number>10000000</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="6" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_74">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_64">
+                                <item>
+                                 <widget class="QLabel" name="label_46">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Offset Y</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="offsety_spinbox_2">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="1" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_75">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_65">
+                                <item>
+                                 <widget class="QLabel" name="label_47">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Height</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="height_spinbox_2">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                                  </property>
+                                  <property name="maximum">
+                                   <number>100000</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="3" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_76">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_66">
+                                <item>
+                                 <widget class="QLabel" name="label_48">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Gain</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="gain_spinbox_2">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                                  </property>
+                                  <property name="maximum">
+                                   <number>400</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="2" column="0" colspan="2">
+                              <widget class="QFrame" name="frame_77">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid back</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_67">
+                                <item>
+                                 <widget class="QLabel" name="label_49">
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Width</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QSpinBox" name="width_spinbox_2">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>33</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                                  </property>
+                                  <property name="maximum">
+                                   <number>10000</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_78">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>61</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">border:no;
+font: 12pt &quot;Mongolian Baiti&quot;;</string>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_68">
+                           <item>
+                            <widget class="QFrame" name="frame_80">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>36</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>150</width>
+                               <height>59</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QFrame{
+	background: #0C356A;
+border-radius:5px;
+}
+</string>
+                             </property>
+                             <property name="frameShape">
+                              <enum>QFrame::Box</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Raised</enum>
+                             </property>
+                             <property name="lineWidth">
+                              <number>3</number>
+                             </property>
+                             <layout class="QHBoxLayout" name="horizontalLayout_69">
+                              <item>
+                               <widget class="QPushButton" name="Save_Camera_Parameters_2">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>120</width>
+                                  <height>16777215</height>
+                                 </size>
+                                </property>
+                                <property name="cursor">
+                                 <cursorShape>PointingHandCursor</cursorShape>
+                                </property>
+                                <property name="toolTip">
+                                 <string>Save Parameters</string>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">QPushButton{
+	color: white;
+    background-color:#0C356A;
+	padding: 5px;
+	font-size:12px;
+	font-weight: bold;
+	border-radius:7px;
+background-color:transparent;
+}
+
+QPushButton:hover{
+	background: #a3a3a3;
+}
+
+QPushButton:disabled {
+    color: #8D8D8D;
+}
+
+QPushButton:pressed {
+	background: rgb(0, 0, 0);
+}
+
+</string>
+                                </property>
+                                <property name="text">
+                                 <string>Save Prameters</string>
+                                </property>
+                                <property name="icon">
+                                 <iconset>
+                                  <normaloff>../icons/save.png</normaloff>../icons/save.png</iconset>
+                                </property>
+                                <property name="iconSize">
+                                 <size>
+                                  <width>26</width>
+                                  <height>26</height>
+                                 </size>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="verticalSpacer_28">
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>20</width>
+                            <height>40</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
                   </widget>
                  </item>
                 </layout>
@@ -5077,8 +6168,8 @@ font: 26pt &quot;Mongolian Baiti&quot;;</string>
                         <rect>
                          <x>0</x>
                          <y>0</y>
-                         <width>974</width>
-                         <height>642</height>
+                         <width>98</width>
+                         <height>31</height>
                         </rect>
                        </property>
                        <layout class="QHBoxLayout" name="horizontalLayout_13">

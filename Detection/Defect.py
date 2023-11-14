@@ -23,7 +23,8 @@ step=2
 #frame_idx = 0     #get error when the defect occur in th first place of frame
 frame_idx = 500 // step  #remove the error when the defect occur in th first place of frame
 
-def defect_detection(frame_idx, fname,idx,defect_tracker):
+def defect_detection(frame_idx, fname,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,defect_tracker):
+
     ###########################print("Idx on Defect Detection Page")
     ######################print(idx)    check whether idx recieve from LiveView_API page or not 
     # frame_idx = frame_idx = +1 
@@ -54,7 +55,7 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
                 thresh=100,
                 perspective_angle=60,
                 min_tear_lenght=2,
-                tear_depth=570
+                tear_depth=470
             )
     if len(pts) < 20:
                  pts = np.zeros((640, 2), dtype=np.int32)
@@ -118,7 +119,8 @@ def defect_detection(frame_idx, fname,idx,defect_tracker):
 
     frame_idx += 1
     defect_tracker.refresh(
-               res, depth_img=depth_img, Critical_Depth1=7    # Critical_Depth=10
+               res, depth_img=depth_img, Critical_Depth1=idx_Depth_Critical ,Critical_Width=idx_Width_critical,Critical_Lenght=idx_Lenght_Critical ,
+               not_Critical_Depth1=idx_Depth_not_Critical,not_Critical_Width=idx_Width_not_critical,not_Critical_Lenght=idx_Lenght_not_Critical,  not_Critical_Depth1_Max=idx_Depth_not_Critical_Max,not_Critical_Width_Max=idx_Width_not_critical_Max,not_Critical_Lenght_Max=idx_Lenght_not_Critical_Max,  #Critical_Depth=10
             )
     res_draw = defect_tracker.draw(res)
 

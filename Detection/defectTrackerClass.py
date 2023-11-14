@@ -36,11 +36,11 @@ class defectTracker:
         self.pix_mm_width = 140 / 590
         self.CONVAYER_SPEED = 120  # mm/s
         ######self.pix_mm_length = self.step * self.CONVAYER_SPEED / 1000
-        self.pix_mm_length = self.step * self.CONVAYER_SPEED / 750
+        self.pix_mm_length = self.step * self.CONVAYER_SPEED / 400   ############## 750
         self.db_Report = db_Report
         self.max_depth=0
 
-    def refresh(self, img, depth_img, Critical_Depth1):
+    def refresh(self, img, depth_img, Critical_Depth1,Critical_Width,Critical_Lenght,not_Critical_Depth1,not_Critical_Width,not_Critical_Lenght,not_Critical_Depth1_Max,not_Critical_Width_Max,not_Critical_Lenght_Max):
         h_img, w_img = img.shape[:2]
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         _, thresh_img = cv2.threshold(gray, 30, 255, cv2.THRESH_BINARY)
@@ -60,8 +60,7 @@ class defectTracker:
 
         cv2.drawContours(
             thresh_img, self.complete_defects_cnts, -1, color=0, thickness=-1
-        )           
-
+        )
         contours, _ = cv2.findContours(
             thresh_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
         )
@@ -71,7 +70,7 @@ class defectTracker:
         for cnt in contours:
             area = cv2.contourArea(cnt)
             if area > 300:  # or perimeter > 100:   # filter the area of the defect
-                critical_flage_id = 0
+                critical_flage_id = 2
                 ######### I changed this part
                 ####if area > 300:  # or perimeter > 100:   # filter the area of the defect
                 # print("area of defect")
@@ -103,38 +102,76 @@ class defectTracker:
                     self.total_depth.append(
                         abs(defect_roi).max()
                     )  # Find the depth of the defect
-                    if abs(defect_roi).max() > Critical_Depth1:
+
+                    if abs(defect_roi).max() > Critical_Depth1  and w_mm > Critical_Width   and h_mm > Critical_Lenght :
+
+
+
+
+                        
                         self.number_of_critical_defect = (
                             self.number_of_critical_defect + 1
                         )
                         critical_flage_id = 1
                         self.critical_flage.append(
                             1
-                        )  # If defect is critical, the flage is set ot 1
-                    else:
-                        critical_flage_id = 0
-                        self.critical_flage.append(
-                            0
-                        )  # If defect is not-critical, the flage is set to 0
+                        )  # If defect is critical, the flage is set to 1
+                    #else:
+                         #print("abs(defect_roi).max()")
+                         #print(abs(defect_roi).max())
+                         #print("w_mm")
+                         #print(w_mm)
+                         #print("h_mm")
+                         #print(h_mm)
+
+                         #print(not_Critical_Depth1)
+                         #print(not_Critical_Width)
+                         #print(not_Critical_Lenght)
+
+                        # print("abs(defect_roi).max()  >  not_Critical_Depth1")
+                        # print(abs(defect_roi).max()  >  not_Critical_Depth1)
+                       #  print( abs(defect_roi).max() < Critical_Depth1 )
+                        # print(w_mm > not_Critical_Width)
+                        # print( w_mm < Critical_Width)
+                        # print(h_mm > not_Critical_Lenght)
+                        # print( h_mm < Critical_Lenght)
+
+
+                   
+                    if abs(defect_roi).max()  >  not_Critical_Depth1  and   abs(defect_roi).max() < not_Critical_Depth1_Max :
+                         if  w_mm > not_Critical_Width  and  w_mm < not_Critical_Width_Max :
+                               if  h_mm > not_Critical_Lenght  and  h_mm < not_Critical_Lenght_Max:
+
+
+                                    
+                         # if abs(defect_roi).max()  >  not_Critical_Depth1  and  w_mm > not_Critical_Width   and  h_mm > not_Critical_Lenght:
+                                    critical_flage_id = 0
+                                    self.critical_flage.append(
+                                                    0
+                                    )  # If defect is not-critical, the flage is set to 0
+                                   
+
                     # if len (self.total_complete_defects_cnts)> 0:
                     # print("self.complete_defects_cnts")
                     # print(len(self.total_complete_defects_cnts))
-                    self.number_of_defect = self.number_of_defect + 1
-                    ###str_date = self.getDate_of_system()
-                    #str_date = date.today().strftime('%Y/%m/%d')    #This is used for getting the date and time in normal format
-                    str_date = date.today().strftime('%Y/%#m/%#d')   #This is used for getting the date and time in decimal format
-                    
-                    self.max_depth=abs(defect_roi).max()
-                    self.db_Report.add_record(
-                        (
-                            h_mm,
-                            abs(defect_roi).max(),
-                            w_mm,
-                            str_date,
-                            critical_flage_id,
-                            path,
-                        ),
-                    )
+                    if critical_flage_id == 0 or critical_flage_id == 1 :
+                       # print("self.number_of_defect")
+                        #print(self.number_of_defect )
+                        self.number_of_defect = self.number_of_defect + 1
+                        ###str_date = self.getDate_of_system()
+                        #str_date = date.today().strftime('%Y/%m/%d')    # This is used for getting the date and time in normal format
+                        str_date = date.today().strftime('%Y/%#m/%#d')   # This is used for getting the date and time in decimal format
+                        self.max_depth=abs(defect_roi).max()
+                        self.db_Report.add_record(
+                            (
+                                h_mm,
+                                abs(defect_roi).max(),
+                                w_mm,
+                                str_date,
+                                critical_flage_id,
+                                path,
+                            ),
+                        )
                 else:
                     self.inprogress_defects_cnts.append(cnt)
                    
@@ -144,7 +181,6 @@ class defectTracker:
                
         return self.max_depth
         
-
 
     def get_defect_infoes(self, depth_img, img):
         h_img, w_img = img.shape[:2]

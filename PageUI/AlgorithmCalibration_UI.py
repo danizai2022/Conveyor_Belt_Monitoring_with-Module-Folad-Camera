@@ -12,16 +12,27 @@ class AlgorithmCalibration_UI(Common_Function_UI):
         self.ui = ui
 
         self.general_information_calib = {
-            "GRADIENT_SIZE": self.ui.SpinBox_GRADIENT_SIZE,
-            "MAX_ERROR": self.ui.SpinBox_MAX_ERROR,
-            "TEAR_DEPTH": self.ui.SpinBox_TEAR_DEPTH,
-            "Critical_Depth": self.ui.SpinBox_Critical_Depth,
+            "Width_critical": self.ui.Width_critical,
+            "Depth_Critical": self.ui.Depth_Critical,
+            "Lenght_Critical": self.ui.Lenght_Critical,
+             "Width_not_critical": self.ui.Width_not_critical,
+            "Depth_not_Critical":self.ui.Depth_not_Critical,
+            "lenght_not_critical": self.ui.lenght_not_critical,
+            "Width_not_critical_Max": self.ui.Width_not_critical_Max,
+            "Depth_not_Critical_Max":self.ui.Depth_not_Critical_Max,
+            "lenght_not_critical_Max": self.ui.lenght_not_critical_Max,
         }
         self.parms_calib = {
-            "GRADIENT_SIZE": 0,
-            "MAX_ERROR": 0,
-            "TEAR_DEPTH": 0,
-            "Critical_Depth": 0,
+            "Width_critical": 0,
+            "Depth_Critical": 0,
+            "Lenght_Critical": 0,
+             "Width_not_critical": 0,
+            "Depth_not_Critical":0,
+            "lenght_not_critical": 0,
+            "Width_not_critical_Max": 0,
+            "Depth_not_Critical_Max":0,
+            "lenght_not_critical_Max": 0,
+        
         }
 
     def button_connector(self, fun):
