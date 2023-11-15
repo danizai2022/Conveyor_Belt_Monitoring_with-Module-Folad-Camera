@@ -18,6 +18,13 @@ class CameraSetting_UI(Common_Function_UI):
             "Height": self.ui.height_spinbox,
             "offsetX": self.ui.offsetx_spinbox,
             "offsetY": self.ui.offsety_spinbox,
+             "Serial_2": self.ui.serial_number_spinBox_2,
+            "Gain_2": self.ui.gain_spinbox_2,
+            "Exposure_2": self.ui.expo_spinbox_2,
+            "Width_2": self.ui.width_spinbox_2,
+            "Height_2": self.ui.height_spinbox_2,
+            "offsetX_2": self.ui.offsetx_spinbox_2,
+            "offsetY_2": self.ui.offsety_spinbox_2,
         }
         self.parms_camera = {
             "Serial": 0,
@@ -27,11 +34,36 @@ class CameraSetting_UI(Common_Function_UI):
             "Height": 0,
             "offsetX": 0,
             "offsetY": 0,
+            "Serial_2": 0,
+            "Gain_2": 0,
+            "Exposure_2": 0,
+            "Width_2": 0,
+            "Height_2": 0,
+            "offsetX_2": 0,
+            "offsetY_2": 0,
         }
+
+        self.general_information_algorithm = {
+            "GRADIENT_SIZE": self.ui.SpinBox_GRADIENT_SIZE,
+            "Critical_Depth": self.ui.SpinBox_Critical_Depth,
+            "TEAR_DEPTH": self.ui.SpinBox_TEAR_DEPTH,
+            "MAX_ERROR": self.ui.SpinBox_MAX_ERROR,
+           
+        }
+        self.parms_algorithm = {
+            "GRADIENT_SIZE": 0,
+            "Critical_Depth": 0,
+            "TEAR_DEPTH": 0,
+            "MAX_ERROR": 0,
+           
+        }
+
+
         self.ui.Stop_connection_Camera_setting.setEnabled(False)
 
-    def button_connector(self, fun):
-        self.ui.Save_Camera_Parameters.clicked.connect(fun)
+    def button_connector(self, fun_camera,fun_algorithm):
+        self.ui.Save_Camera_Parameters.clicked.connect(fun_camera)
+        self.ui.Save_Algorithm_Parameters.clicked.connect(fun_algorithm)
         self.ui.Camera_connection_Camera_setting.clicked.connect(
             partial(self.connect_camera)
         )
@@ -66,7 +98,7 @@ class CameraSetting_UI(Common_Function_UI):
 
     def set_camera_parms_UI(self, infoes: dict):
         for name, value in infoes.items():
-            if name == "Serial":
+            if name == "Serial"  or name == "Serial_2":
                 self.general_information_camera[name].setText(str(value))
             else:
                 self.general_information_camera[name].setValue(value)
@@ -75,7 +107,7 @@ class CameraSetting_UI(Common_Function_UI):
 
     def get_camera_parms_UI(self):
         for name, value in self.general_information_camera.items():
-            if name == "Serial":
+            if name == "Serial"  or name == "Serial_2":
                 self.parms_camera[name] = int(
                     self.general_information_camera[name].text()
                 )
@@ -85,3 +117,17 @@ class CameraSetting_UI(Common_Function_UI):
                 )
 
         return self.parms_camera
+
+
+
+    def set_algorithm_parms_UI(self, example_dict):
+        for name, value in example_dict.items():
+            self.general_information_algorithm[name].setValue(value)
+       
+        self.parms_algorithm = self. get_algorithm_parms_UI()
+
+    def get_algorithm_parms_UI(self):
+        for name, value in self.general_information_algorithm.items():
+            self.parms_algorithm[name] = int(self.general_information_algorithm[name].value())
+
+        return self.parms_algorithm

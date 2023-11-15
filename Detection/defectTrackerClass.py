@@ -138,19 +138,18 @@ class defectTracker:
 
 
                    
-                    if abs(defect_roi).max()  >  not_Critical_Depth1  and   abs(defect_roi).max() < not_Critical_Depth1_Max :
+                    else :
+                        if abs(defect_roi).max()  >  not_Critical_Depth1  and   abs(defect_roi).max() < not_Critical_Depth1_Max :
                          if  w_mm > not_Critical_Width  and  w_mm < not_Critical_Width_Max :
-                               if  h_mm > not_Critical_Lenght  and  h_mm < not_Critical_Lenght_Max:
-
-
-                                    
+                               if  h_mm > not_Critical_Lenght  and  h_mm < not_Critical_Lenght_Max:         
                          # if abs(defect_roi).max()  >  not_Critical_Depth1  and  w_mm > not_Critical_Width   and  h_mm > not_Critical_Lenght:
                                     critical_flage_id = 0
                                     self.critical_flage.append(
                                                     0
                                     )  # If defect is not-critical, the flage is set to 0
-                                   
-
+                        else :    
+                            critical_flage_id = 2  
+                            self.number_of_defect = self.number_of_defect + 1  
                     # if len (self.total_complete_defects_cnts)> 0:
                     # print("self.complete_defects_cnts")
                     # print(len(self.total_complete_defects_cnts))

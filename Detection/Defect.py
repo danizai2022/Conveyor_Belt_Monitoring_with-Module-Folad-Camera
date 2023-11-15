@@ -55,7 +55,7 @@ def defect_detection(frame_idx, fname,idx_Depth_Critical,idx_Width_critical,idx_
                 thresh=100,
                 perspective_angle=60,
                 min_tear_lenght=2,
-                tear_depth=470
+                tear_depth=470    ####### 570
             )
     if len(pts) < 20:
                  pts = np.zeros((640, 2), dtype=np.int32)

@@ -3,7 +3,7 @@ from functools import partial
 from .Common_Function_UI import Common_Function_UI
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtCore import QTimer
-
+from PyQt5 import QtGui
 
 class LiveView_UI(Common_Function_UI):
 
@@ -129,4 +129,5 @@ class LiveView_UI(Common_Function_UI):
             bytes_per_line,
             QImage.Format_BGR888,  # This is used to show the heatmap of the defect in output
         )
-        self.ui.Showlive.setPixmap(QPixmap.fromImage(convert_to_Qt_format))
+        ######self.ui.Showlive.setPixmap(QPixmap.fromImage(convert_to_Qt_format))
+        self.ui.Showlive.setPixmap(QPixmap.fromImage(convert_to_Qt_format).transformed(QtGui.QTransform().rotate(90)))    ########## for rotate image

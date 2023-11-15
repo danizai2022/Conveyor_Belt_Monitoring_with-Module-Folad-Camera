@@ -37,12 +37,12 @@ class AlgorithmCalibration_UI(Common_Function_UI):
 
     def button_connector(self, fun):
         self.ui.Save_Calibration.clicked.connect(fun)
-        self.ui.Camera_connection_Calibration.clicked.connect(
-            partial(self.connect_camera)
-        )
-        self.ui.Stop_connection_Clibration.clicked.connect(
-            partial(self.disconnect_camera)
-        )
+        #self.ui.Camera_connection_Calibration.clicked.connect(
+        #    partial(self.connect_camera)
+        #)
+        #self.ui.Stop_connection_Clibration.clicked.connect(
+        #    partial(self.disconnect_camera)
+        #)
 
     def set_message_on_label(self, txt):
         self.set_message(
@@ -50,24 +50,24 @@ class AlgorithmCalibration_UI(Common_Function_UI):
             text=txt,
         )
 
-    def connect_camera(self):
+   ### def connect_camera(self):
         ##self.enable_disable_camera_btns(True)
-        self.ui.Camera_connection_Calibration.setEnabled(False)
-        self.set_message(
-            label_name=self.ui.Message_Calibration,
-            text="Connect to Camera Successfully",
-        )
+     ###   self.ui.Camera_connection_Calibration.setEnabled(False)
+     ###   self.set_message(
+      ###      label_name=self.ui.Message_Calibration,
+       ###     text="Connect to Camera Successfully",
+       ### )
 
-        self.ui.Stop_connection_Clibration.setEnabled(True)
+      ###  self.ui.Stop_connection_Clibration.setEnabled(True)
 
-    def disconnect_camera(self):
+    ###def disconnect_camera(self):
         # self.enable_disable_camera_btns(False)
-        self.ui.Camera_connection_Calibration.setEnabled(True)
-        self.ui.Stop_connection_Clibration.setEnabled(False)
-        self.set_message(
-            label_name=self.ui.Message_Calibration,
-            text="Disconnect to Camera Successfully",
-        )
+     ###   self.ui.Camera_connection_Calibration.setEnabled(True)
+     ###   self.ui.Stop_connection_Clibration.setEnabled(False)
+     ###   self.set_message(
+     ###       label_name=self.ui.Message_Calibration,
+     ###       text="Disconnect to Camera Successfully",
+     ###   )
 
     def set_calibration_parms_UI(self, example_dict):
         for name, value in example_dict.items():
