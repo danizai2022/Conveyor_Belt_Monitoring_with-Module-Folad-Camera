@@ -1,9 +1,7 @@
 from PyQt5.QtWidgets import *
 from .Common_Function_UI import Common_Function_UI
 from functools import partial
-
-
-
+from PyQt5.QtGui import QImage, QPixmap
 class CameraSetting_UI(Common_Function_UI):
 
     """Description of the code"""
@@ -58,18 +56,26 @@ class CameraSetting_UI(Common_Function_UI):
            
         }
 
-
         self.ui.Stop_connection_Camera_setting.setEnabled(False)
 
-    def button_connector(self, fun_camera,fun_algorithm):
+    def button_connector(self, fun_camera,fun_algorithm,fun_Tear):
         self.ui.Save_Camera_Parameters.clicked.connect(fun_camera)
         self.ui.Save_Algorithm_Parameters.clicked.connect(fun_algorithm)
         self.ui.Camera_connection_Camera_setting.clicked.connect(
             partial(self.connect_camera)
         )
-        self.ui.Stop_connection_Camera_setting.clicked.connect(
-            partial(self.disconnect_camera)
+        self.ui.Show_Tear_Depth_Button.clicked.connect(
+        fun_Tear    
         )
+        self.ui.Save_Algorithm_Parameters.clicked.connect(fun_algorithm)
+
+    def show_tear_depth(self,max):
+         self.ui.Show_Tear_Depth_Label.setText(str(max))
+
+
+    def button_connector_camera(self,fun):
+        self.ui.Camera_connection_Camera_setting.clicked.connect(fun)
+
 
     def connect_camera(self):
         self.ui.Camera_connection_Camera_setting.setEnabled(False)
@@ -131,3 +137,14 @@ class CameraSetting_UI(Common_Function_UI):
             self.parms_algorithm[name] = int(self.general_information_algorithm[name].value())
 
         return self.parms_algorithm
+
+    def set_Pixmap(self, img_data, w, h, bytes_per_line):
+        convert_to_Qt_format = QImage(
+            img_data,
+            w,
+            h,
+            bytes_per_line,
+            QImage.Format_Grayscale8,  # This is used to show the heatmap of the defect in output
+        )
+        self.ui.Showlive_Setting.setPixmap(QPixmap.fromImage(convert_to_Qt_format))
+        #self.ui.Showlive.setPixmap(QPixmap.fromImage(convert_to_Qt_format).transformed(QtGui.QTransform().rotate(90)))    ########## for rotate image

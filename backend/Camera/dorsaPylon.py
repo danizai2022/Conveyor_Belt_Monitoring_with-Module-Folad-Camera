@@ -150,7 +150,7 @@ class Camera:
     def build_zero_image(self):
         """return a zero image with the dimensions of the camera image"""
         _, _, h, w = self.Parms.get_roi()
-        img = np.zeros((h, w, 3), dtype=np.uint8)
+        img = np.zeros((h, w), dtype=np.uint8)   # Change for getting image from the camera, if the error occur the 2-dim image is returned, not 3-dim
         return img
 
     def getPictures(self, grabResult=None, img_when_error="zero") -> np.ndarray:

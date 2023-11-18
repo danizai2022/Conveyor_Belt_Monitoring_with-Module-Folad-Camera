@@ -45,8 +45,6 @@ class LiveView_API:
             "offsetY": 0,
         }
 
-
-
         self.parms_calibration_liveView = {
             "Width_critical": 0,
             "Depth_Critical": 0,
@@ -58,7 +56,6 @@ class LiveView_API:
             "Depth_not_Critical_Max":0,
             "lenght_not_critical_Max": 0,
         }
-
 
         self.parms_algorithm_liveView = {
             "GRADIENT_SIZE": 0,
@@ -129,13 +126,19 @@ class LiveView_API:
     def show_farme_camera(self):  ###################  for getting image from  the camera
         self.ui_live.disable_live()
         self.ui_live.enable_stop()
+       
 
         if self.camera !=None:
-            self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
-            self.camera.Operations.start_grabbing()
-            self.camera.Parms.set_exposureTime(5000)
-            self.camera.Parms.set_gain(517)  #217   #### get the good answer
+            #print("connect To camera on liveView_API")
+
+            ##################  self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera set on main_API
+            ##################  self.camera.Operations.start_grabbing()
+            ##################  self.camera.Parms.set_exposureTime(5000)
+            ##################  self.camera.Parms.set_gain(517)  #217   #### get the good answer
+
+
             img = self.camera.getPictures()
+
             ###########  res,img = self.cam.getPictures()
             idx_Width_critical=self.parms_calibration_liveView["Width_critical"]
             idx_Depth_Critical=self.parms_calibration_liveView["Depth_Critical"]
@@ -149,16 +152,23 @@ class LiveView_API:
             idx_Width_not_critical_Max=self.parms_calibration_liveView["Width_not_critical_Max"]
             idx_Depth_not_Critical_Max=self.parms_calibration_liveView["Depth_not_Critical_Max"]
             idx_Lenght_not_Critical_Max=self.parms_calibration_liveView["lenght_not_critical_Max"]
-                
 
 
-            #print("idx of the Exposure")
-            #print(idx)
+            #parms_algorithm_liveView["GRADIENT_SIZE"]
+            #parms_algorithm_liveView["Critical_Depth"]
+
+
+            idx_TEAR_DEPTH=self.parms_algorithm_liveView["TEAR_DEPTH"]
+            idx_MAX_ERROR=self.parms_algorithm_liveView["MAX_ERROR"]
+
+
+      
             self.frame_idx = self.frame_idx + 1
 
             res_img, s, Number_Defect, Number_of_Critical_Defect= defect_detection(
-                self.frame_idx, img,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,self.defect_tracker
+                self.frame_idx, img,idx_TEAR_DEPTH,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,self.defect_tracker
             )
+        
             styles_Live = {
                     "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
                     "Critical_live_view": "background-color:rgb(219, 219, 219) ",
@@ -216,8 +226,6 @@ class LiveView_API:
         self.set_calibration_parms_API(param_cal)
       
       
-
-
     def set_initial_param_camera(self, param_cam):   
         self.set_camera_parms_API(param_cam)
        
@@ -228,16 +236,15 @@ class LiveView_API:
 
     def set_param_algorithm(self, param_algorithm):  
        self.set_algorithm_parms_API( param_algorithm)
-       print("change the param_algorithm")
-       print(param_algorithm)
+       #print("change the param_algorithm")
+       #print(param_algorithm)
 
     def set_initial_param_algorithm(self, param_algorithm):   
         self.set_algorithm_parms_API(param_algorithm)
-        print("initial param_algorithm")
-        print(param_algorithm)
+        #print("initial param_algorithm")
+        #print(param_algorithm)
        
 
-    
 
     def set_calibration_parms_API(self, example_dict): 
         for name, value in example_dict.items():

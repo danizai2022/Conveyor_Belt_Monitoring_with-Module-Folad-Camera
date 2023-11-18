@@ -1,6 +1,11 @@
 import pickle
+import cv2
 CAMERA_PICKLE_PATH="backend\Camera\dict.camera"
 ALGORITHM_PICKLE_PATH="backend\Calibration\dict.pickle"
+from Detection.Defect import (
+    defect_detection_find_max,
+
+)
 class CameraSetting_API:
 
     """Description of the code
@@ -14,11 +19,51 @@ class CameraSetting_API:
         self.button_connector()
         self.pre_laod_camera_parms()
         self.pre_laod_algorithm_parms()
+        self.button_connector_camera()
         self.camera=camera
 
     def button_connector(self):
-        self.ui_cam.button_connector(self.save_load_camera_param,self.Save_algorithm_parms)
+        self.ui_cam.button_connector(self.save_load_camera_param,self.Save_algorithm_parms,self.calculate_tear_depth)
 
+
+    def button_connector_camera(self,):
+        #pass
+        self.ui_cam.button_connector_camera(self.show_frame)    ############## for getting image from camera
+        ########self.ui_live.button_connector(self.start_selection)  # for getting image from folder
+
+
+    def calculate_tear_depth(self):
+
+       if self.camera !=None:
+            #self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
+           # self.camera.Operations.start_grabbing()
+            #self.camera.Parms.set_exposureTime(5000)
+           # self.camera.Parms.set_gain(517)  #217   #### get the good answer
+           
+           img = self.camera.getPictures()
+           max=defect_detection_find_max(img ,470)
+           #print(max)
+           #self.show_image(img)
+           self.ui_cam.show_tear_depth(max)
+
+
+
+    def show_frame(self):
+        ##pass
+        ######### pass 
+        ###############print("show frame on camera setting page")
+        
+       if self.camera !=None:
+            #self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
+           # self.camera.Operations.start_grabbing()
+            #self.camera.Parms.set_exposureTime(5000)
+           # self.camera.Parms.set_gain(517)  #217   #### get the good answer
+           img = self.camera.getPictures()
+           self.show_image(img)
+
+
+           #cv2.imshow("img",img)
+          
 
     def get_Camera_parms(self):
         parms_camera = self.ui_cam.get_camera_parms_UI()
@@ -29,11 +74,8 @@ class CameraSetting_API:
         return parms_algorithm
      
 
-
     def set_back_event_func_camera(self,fun_camera):
         self.set_camera_paprameter_on_main_API=fun_camera
-
-
 
 
     def set_back_event_func_algorithm(self, fun_algorithm):
@@ -53,7 +95,6 @@ class CameraSetting_API:
 
     def Save_algorithm_parms(self):
         parms_algorithm = self.ui_cam.get_algorithm_parms_UI()
-
         pickle_out = open(ALGORITHM_PICKLE_PATH, "wb")
         pickle.dump(parms_algorithm, pickle_out)
         pickle_out.close()
@@ -75,3 +116,25 @@ class CameraSetting_API:
         example_dict = pickle.load(pickle_in)
         self.ui_cam.set_algorithm_parms_UI(example_dict)
 
+
+
+    def show_image(self, frame):
+        img = frame
+        # h, w, ch = img.shape
+        h, w = img.shape
+        img = cv2.resize(
+            img,
+            # (w, h),  # this is relative to the camera
+            (1500, 1000),  # 
+            interpolation=cv2.INTER_AREA,
+        )
+
+        try:
+            h, w, ch = img.shape
+
+        except:
+            h, w = img.shape
+            img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+            ch = 1
+        bytes_per_line = ch * w
+        self.ui_cam.set_Pixmap(img.data, w, h, bytes_per_line)

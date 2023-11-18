@@ -33,6 +33,7 @@ class LiveView_UI(Common_Function_UI):
         self.ui.live.setEnabled(False)
         self.ui.Stop.setEnabled(False)
         self.camera_connection=False
+        
     def button_connector(self,camera_connection):   # input fun for getting image from folder
         self.camera_connection=camera_connection
         self.ui.Camera_connection.clicked.connect(partial(self.connect_camera))
@@ -102,8 +103,7 @@ class LiveView_UI(Common_Function_UI):
         #self.enable_disable_camera_btns(False)
         #print("self.camera_connection.Operations.stop_grabbing()")
         #print(self.camera_connection.Operations.stop_grabbing())
-       
-        self.camera_connection.Operations.stop_grabbing()   ################################## Check whether is it work correct or not
+        ####################################################################   self.camera_connection.Operations.stop_grabbing()   ################################## Check whether is it work correct or not
         #self.ui.Camera_connection.setEnabled(True)
         self.set_message(
             label_name=self.ui.Message_LiveView,

@@ -23,7 +23,28 @@ step=2
 #frame_idx = 0     #get error when the defect occur in th first place of frame
 frame_idx = 500 // step  #remove the error when the defect occur in th first place of frame
 
-def defect_detection(frame_idx, fname,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,defect_tracker):
+
+def defect_detection_find_max( fname,idx_TEAR_DEPTH):
+
+    if fname.ndim >2 :
+            fname = cv2.cvtColor(fname, cv2.COLOR_BGR2GRAY)
+
+    img = fname[:, 25:620]
+    img = cv2.blur(img, (5, 1))
+   
+    pts = ConvayerBase.extract_points(
+                img,
+                thresh=100,
+                perspective_angle=60,
+                min_tear_lenght=2,
+                tear_depth=idx_TEAR_DEPTH   ####### 570
+    )
+
+    #print("max(pts)")
+    return  pts[:,1].max()
+
+
+def defect_detection(frame_idx, fname,idx_TEAR_DEPTH,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,defect_tracker):
 
     ###########################print("Idx on Defect Detection Page")
     ######################print(idx)    check whether idx recieve from LiveView_API page or not 
@@ -49,14 +70,22 @@ def defect_detection(frame_idx, fname,idx_Depth_Critical,idx_Width_critical,idx_
     #########################################      img = fname  ####################################  for getting image from camera
     # -----------------------------------------------------------------------
     img = cv2.blur(img, (5, 1))
+    ## cv2.imshow("pts",img )
+    ##cv2.waitKey(0) 
     ###pts = ConvayerBase.extract_points(img, thresh=10, perspective_angle=60)  for previous version
     pts = ConvayerBase.extract_points(
                 img,
                 thresh=100,
                 perspective_angle=60,
                 min_tear_lenght=2,
-                tear_depth=470    ####### 570
+                tear_depth=idx_TEAR_DEPTH   ####### 570
             )
+
+
+    #print("max(pts)")
+    #print(pts[:,1].max())
+   
+
     if len(pts) < 20:
                  pts = np.zeros((640, 2), dtype=np.int32)
                  pts[:, 0] = np.arange(0, len(pts))

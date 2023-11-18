@@ -581,7 +581,7 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
-             <string>Calibration</string>
+             <string>Defect Parameters</string>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
@@ -632,7 +632,7 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
-             <string>Camera Setting</string>
+             <string>Setting</string>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
@@ -1669,6 +1669,12 @@ QPushButton:pressed {
                           </item>
                           <item>
                            <widget class="QPushButton" name="Stop">
+                            <property name="toolTip">
+                             <string>Stop Live</string>
+                            </property>
+                            <property name="toolTipDuration">
+                             <number>-1</number>
+                            </property>
                             <property name="styleSheet">
                              <string notr="true">
 QPushButton{
@@ -2644,7 +2650,7 @@ border:3px solid back</string>
 border: 3px solid back</string>
                                       </property>
                                       <property name="title">
-                                       <string>Lenght of Defect</string>
+                                       <string>Length of Defect</string>
                                       </property>
                                       <layout class="QVBoxLayout" name="verticalLayout_27">
                                        <item>
@@ -3160,7 +3166,7 @@ border: 3px solid back</string>
 border:3px solid back</string>
                                       </property>
                                       <property name="title">
-                                       <string>Lenght of Defect</string>
+                                       <string>Length of Defect</string>
                                       </property>
                                       <layout class="QVBoxLayout" name="verticalLayout_20">
                                        <item>
@@ -4784,7 +4790,7 @@ font: 16pt &quot;Mongolian Baiti&quot;;</string>
 border: 2px solid back</string>
                    </property>
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>2</number>
                    </property>
                    <widget class="QWidget" name="tab">
                     <attribute name="title">
@@ -5925,13 +5931,13 @@ QPushButton:pressed {
                      <property name="geometry">
                       <rect>
                        <x>10</x>
-                       <y>40</y>
+                       <y>340</y>
                        <width>401</width>
                        <height>349</height>
                       </rect>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">font: 20pt &quot;Mongolian Baiti&quot;;
+                      <string notr="true">font: 18pt &quot;Mongolian Baiti&quot;;
 border: 3px solid back</string>
                      </property>
                      <property name="title">
@@ -6230,7 +6236,7 @@ border-radius:5px;
                                <cursorShape>PointingHandCursor</cursorShape>
                               </property>
                               <property name="toolTip">
-                               <string>Save Parameters</string>
+                               <string/>
                               </property>
                               <property name="styleSheet">
                                <string notr="true">QPushButton{
@@ -6269,6 +6275,223 @@ QPushButton:pressed {
                                 <width>26</width>
                                 <height>26</height>
                                </size>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QGroupBox" name="groupBox_21">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>60</y>
+                       <width>401</width>
+                       <height>211</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 18pt &quot;Mongolian Baiti&quot;;
+border: 3px solid back</string>
+                     </property>
+                     <property name="title">
+                      <string>Show Tear Depth</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_30">
+                      <item>
+                       <spacer name="verticalSpacer_11">
+                        <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                         <enum>QSizePolicy::Fixed</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>20</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame_23">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>39</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: 2px solid back</string>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_36">
+                         <item>
+                          <widget class="QLabel" name="label_38">
+                           <property name="maximumSize">
+                            <size>
+                             <width>244</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                           </property>
+                           <property name="text">
+                            <string>TEAR_DEPTH</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLabel" name="Show_Tear_Depth_Label">
+                           <property name="maximumSize">
+                            <size>
+                             <width>100</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="verticalSpacer_20">
+                        <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                         <enum>QSizePolicy::Fixed</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>20</width>
+                          <height>29</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame_24">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>59</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>67</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border:no
+</string>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_85">
+                         <item>
+                          <widget class="QFrame" name="frame_93">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>36</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>179</width>
+                             <height>66</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QFrame{
+	background: #0C356A;
+border-radius:5px;
+}
+</string>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::Box</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <property name="lineWidth">
+                            <number>3</number>
+                           </property>
+                           <layout class="QHBoxLayout" name="horizontalLayout_84">
+                            <item>
+                             <widget class="QPushButton" name="Show_Tear_Depth_Button">
+                              <property name="maximumSize">
+                               <size>
+                                <width>120</width>
+                                <height>16777215</height>
+                               </size>
+                              </property>
+                              <property name="toolTip">
+                               <string/>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QPushButton{
+	color: white;
+    background-color:#0C356A;
+	padding: 5px;
+	font-size:12px;
+	font-weight: bold;
+	border-radius:7px;
+background-color:transparent;
+}
+
+QPushButton:hover{
+	background: #a3a3a3;
+}
+
+QPushButton:disabled {
+    color: #8D8D8D;
+}
+
+QPushButton:pressed {
+	background: rgb(0, 0, 0);
+}
+</string>
+                              </property>
+                              <property name="text">
+                               <string>Show Tear Depth</string>
                               </property>
                              </widget>
                             </item>
@@ -6514,7 +6737,7 @@ font: 26pt &quot;Mongolian Baiti&quot;;</string>
                        </property>
                        <layout class="QHBoxLayout" name="horizontalLayout_13">
                         <item>
-                         <widget class="QLabel" name="label_39">
+                         <widget class="QLabel" name="Showlive_Setting">
                           <property name="text">
                            <string/>
                           </property>
