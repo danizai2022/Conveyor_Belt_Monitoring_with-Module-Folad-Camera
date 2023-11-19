@@ -24,20 +24,20 @@ step=2
 frame_idx = 500 // step  #remove the error when the defect occur in th first place of frame
 
 
-def defect_detection_find_max( fname,idx_TEAR_DEPTH):
+def defect_detection_find_max(fname,idx_TEAR_DEPTH):
 
     if fname.ndim >2 :
             fname = cv2.cvtColor(fname, cv2.COLOR_BGR2GRAY)
 
     img = fname[:, 25:620]
     img = cv2.blur(img, (5, 1))
-   
+    
     pts = ConvayerBase.extract_points(
                 img,
                 thresh=100,
                 perspective_angle=60,
                 min_tear_lenght=2,
-                tear_depth=idx_TEAR_DEPTH   ####### 570
+                tear_depth=idx_TEAR_DEPTH   ####### 570    ####################   470
     )
 
     #print("max(pts)")
@@ -73,6 +73,7 @@ def defect_detection(frame_idx, fname,idx_TEAR_DEPTH,idx_Depth_Critical,idx_Widt
     ## cv2.imshow("pts",img )
     ##cv2.waitKey(0) 
     ###pts = ConvayerBase.extract_points(img, thresh=10, perspective_angle=60)  for previous version
+  
     pts = ConvayerBase.extract_points(
                 img,
                 thresh=100,
@@ -80,10 +81,6 @@ def defect_detection(frame_idx, fname,idx_TEAR_DEPTH,idx_Depth_Critical,idx_Widt
                 min_tear_lenght=2,
                 tear_depth=idx_TEAR_DEPTH   ####### 570
             )
-
-
-    #print("max(pts)")
-    #print(pts[:,1].max())
    
 
     if len(pts) < 20:

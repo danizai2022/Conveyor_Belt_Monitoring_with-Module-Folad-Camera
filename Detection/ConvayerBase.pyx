@@ -93,9 +93,7 @@ def extract_points(numpy.ndarray[DTYPE_uint8, ndim=2] img, int thresh, int persp
                         res_pts[point_idx,1] = tear_depth
                         point_idx+=1
                     
-                    
-
-           
+ 
             res_pts[point_idx,0] = i
             res_pts[point_idx,1] = int((total_sum / total_count) / perspective + 0.01 )
             #print(total_sum, total_count, res_pts[point_idx,1], int((total_sum / total_count)))

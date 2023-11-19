@@ -1,21 +1,27 @@
 
 class Report_DB:
-    TABLE_NAME = "report46"
+    TABLE_NAME = "report206"
+    TABLE_COLS = [
+        {"col_name": "Length", "type": "float(10,7)"},
+        {"col_name": "Depth", "type": "float(10,7)"},
+        {"col_name": "width", "type": "float(10,7)"},
+        {"col_name": "Date", "type": "VARCHAR(255)", "len": 50},
+        {"col_name": "critical", "type": "float(10,7)"},
+        {"col_name": "image_path", "type": "VARCHAR(255)", "len": 50},
+    ]
 
     def __init__(self, db_manager):
         self.db_manager = db_manager
-        #self.__create_table__()
-        self.TABLE_NAME="reports76"
+        self.__create_table__()
+        #self.TABLE_NAME="reports76"
 
     def __create_table__(
         self,
     ):
         self.db_manager.create_table(self.TABLE_NAME)
-        self.db_manager.create_table(self.TABLE_NAME_DEFAULT)
-
+       
         for col in self.TABLE_COLS:
             self.db_manager.add_column(self.TABLE_NAME, **col)
-            self.db_manager.add_column(self.TABLE_NAME_DEFAULT, **col)
 
 
     def is_exist(self, application):

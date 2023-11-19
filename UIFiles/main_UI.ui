@@ -4790,7 +4790,7 @@ font: 16pt &quot;Mongolian Baiti&quot;;</string>
 border: 2px solid back</string>
                    </property>
                    <property name="currentIndex">
-                    <number>2</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="tab">
                     <attribute name="title">
@@ -5161,7 +5161,7 @@ border-radius: 3;
 font-size:18px;</string>
                                   </property>
                                   <property name="maximum">
-                                   <number>400</number>
+                                   <number>600</number>
                                   </property>
                                  </widget>
                                 </item>
@@ -6115,7 +6115,7 @@ border-radius: 3;
 font-size:18px;</string>
                            </property>
                            <property name="maximum">
-                            <number>600</number>
+                            <number>2000</number>
                            </property>
                           </widget>
                          </item>

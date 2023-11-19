@@ -14,11 +14,9 @@ class main_API:
     def __init__(self, ui) -> None:
 
 
-        self.collector = Collector()    
-        ###################  self.camera = self.collector.get_camera_by_serial(str(self.parms_camera_liveView["Serial"]))
 
-        self.connect_to_Camera()
-
+        self.collector = Collector()   
+        self.connect_to_Camera() 
         self.ui = ui  #============================== > API = main_API(main_ui)  on main_UI page
         self.db = mainDatabase()
         ###############################      AlgorithmCalibration_API    ################################
@@ -51,6 +49,9 @@ class main_API:
         )  # Create Object of Report_API   =========== >self.Page_Report = Report_UI(self.ui)  on main_UI page
 
 
+        ###################  self.camera = self.collector.get_camera_by_serial(str(self.parms_camera_liveView["Serial"]))
+      
+
     def get_calibration_paprameter_main_API(self,param):
          self.API_Page_LiveView.set_param_calibration(param)  # Send the parameters of calibration to API_Page_liveView
         
@@ -67,6 +68,6 @@ class main_API:
         self.camera = self.collector.get_camera_by_serial(str(23287291))    ###################  for getting image from  camera
         self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
         self.camera.Operations.start_grabbing()
-        self.camera.Parms.set_exposureTime(5000)
-        self.camera.Parms.set_gain(517)  #217   #### get the good answer
+       
+
     

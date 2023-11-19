@@ -136,7 +136,13 @@ class LiveView_API:
             ##################  self.camera.Parms.set_exposureTime(5000)
             ##################  self.camera.Parms.set_gain(517)  #217   #### get the good answer
 
+            Exposure=self.parms_camera_liveView["Exposure"]
+            Gain=self.parms_camera_liveView["Gain"]
 
+        
+
+            self.camera.Parms.set_exposureTime(Exposure)      # Get good answer for second version ----- 5000
+            self.camera.Parms.set_gain(Gain)  #217   #### get the good answer         # Get good answer for second version ----- 517
             img = self.camera.getPictures()
 
             ###########  res,img = self.cam.getPictures()
