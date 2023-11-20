@@ -1,6 +1,6 @@
 
 class Report_DB:
-    TABLE_NAME = "report206"
+    TABLE_NAME = "report906"
     TABLE_COLS = [
         {"col_name": "Length", "type": "float(10,7)"},
         {"col_name": "Depth", "type": "float(10,7)"},
@@ -19,7 +19,6 @@ class Report_DB:
         self,
     ):
         self.db_manager.create_table(self.TABLE_NAME)
-       
         for col in self.TABLE_COLS:
             self.db_manager.add_column(self.TABLE_NAME, **col)
 
@@ -56,6 +55,10 @@ class Report_DB:
     
     def  search(self,column_name, Select_ID):
          records = self.db_manager.search(self.TABLE_NAME, column_name, Select_ID)
+         return records
+    
+    def search_Total(self):
+         records = self.db_manager.search_Total(self.TABLE_NAME)
          return records
     
 

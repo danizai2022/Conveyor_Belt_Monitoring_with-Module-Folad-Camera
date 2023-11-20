@@ -119,6 +119,14 @@ G10.add_color((0, 0, 0), 0.48)  # white clack
 # G6.add_color((50, 50, 50), 0.4)
 # G10.add_color((0, 0, 255), 1)  # black color
 
+G14 = colorGradient()
+###########G6.add_color((0, 0, 0), 0.2)  # black color
+G14.add_color((0, 0, 255), 0)
+G14.add_color((0, 255, 255), 0.22)
+G14.add_color((255, 0, 0), 0.32)
+G14.add_color((0, 0, 0), 0.42)
+G14.add_color((0, 0, 0), 0.52)  # white clack
+
 
 G11 = colorGradient()
 ###########G6.add_color((0, 0, 0), 0.2)  # black color

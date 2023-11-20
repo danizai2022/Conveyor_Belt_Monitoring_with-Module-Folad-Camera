@@ -13,8 +13,6 @@ class main_API:
     """
     def __init__(self, ui) -> None:
 
-
-
         self.collector = Collector()   
         self.connect_to_Camera() 
         self.ui = ui  #============================== > API = main_API(main_ui)  on main_UI page
@@ -66,8 +64,9 @@ class main_API:
         
     def connect_to_Camera(self):
         self.camera = self.collector.get_camera_by_serial(str(23287291))    ###################  for getting image from  camera
-        self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
-        self.camera.Operations.start_grabbing()
-       
+        if self.camera :
+            self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera
+            self.camera.Operations.start_grabbing()
+        
 
-    
+        

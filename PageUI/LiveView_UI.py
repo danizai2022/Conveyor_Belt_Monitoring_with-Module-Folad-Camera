@@ -67,6 +67,7 @@ class LiveView_UI(Common_Function_UI):
     def button_connector_QTimer_fun(self):
         fun = self.Get_fn()
         self.picktimer = QTimer()
+        #self.picktimer.setInterval(0.001)
         self.picktimer.timeout.connect(fun)
         self.picktimer.start()
 

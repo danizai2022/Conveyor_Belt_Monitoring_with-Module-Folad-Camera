@@ -8,13 +8,7 @@ import jdatetime
 from scipy.optimize import curve_fit
 
 
-GRADIANT_SIZE = 100 # 100
-MAX_ERROR =10
-# gradiant = heatMap.G11.generate_gradiant(GRADIANT_SIZE)   #Previous version
-######gradiant = heatMap.G12.generate_gradiant(GRADIANT_SIZE)
-gradiant = heatMap.G10.generate_gradiant(GRADIANT_SIZE)
-        #####self.gradiant = self.gradiant.reshape((-1, 3))
-gradiant = gradiant.reshape((-1, 3))
+
 res = np.zeros((500, 640, 3), dtype=np.uint8)
 depth_img = np.zeros(res.shape[:2], dtype=np.float32)
 
@@ -44,8 +38,17 @@ def defect_detection_find_max(fname,idx_TEAR_DEPTH):
     return  pts[:,1].max()
 
 
-def defect_detection(frame_idx, fname,idx_TEAR_DEPTH,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,defect_tracker):
+def defect_detection(frame_idx,fname,idx_pix_length, idx_pix_width,idx_TEAR_DEPTH,idx_TEAR_GRADIENT_SIZE,idx_MAX_ERROR,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,defect_tracker):
 
+    GRADIANT_SIZE = idx_TEAR_GRADIENT_SIZE
+    MAX_ERROR =idx_MAX_ERROR
+
+    # gradiant = heatMap.G11.generate_gradiant(GRADIANT_SIZE)   #Previous version
+    ######gradiant = heatMap.G12.generate_gradiant(GRADIANT_SIZE)
+    gradiant = heatMap.G14.generate_gradiant(GRADIANT_SIZE)
+            #####self.gradiant = self.gradiant.reshape((-1, 3))
+    gradiant = gradiant.reshape((-1, 3))
+    
     ###########################print("Idx on Defect Detection Page")
     ######################print(idx)    check whether idx recieve from LiveView_API page or not 
     # frame_idx = frame_idx = +1 
@@ -145,7 +148,7 @@ def defect_detection(frame_idx, fname,idx_TEAR_DEPTH,idx_Depth_Critical,idx_Widt
 
     frame_idx += 1
     defect_tracker.refresh(
-               res, depth_img=depth_img, Critical_Depth1=idx_Depth_Critical ,Critical_Width=idx_Width_critical,Critical_Lenght=idx_Lenght_Critical ,
+               res, depth_img=depth_img, pix_length=idx_pix_length, pix_width=idx_pix_width, Critical_Depth1=idx_Depth_Critical ,Critical_Width=idx_Width_critical,Critical_Lenght=idx_Lenght_Critical ,
                not_Critical_Depth1=idx_Depth_not_Critical,not_Critical_Width=idx_Width_not_critical,not_Critical_Lenght=idx_Lenght_not_Critical,  not_Critical_Depth1_Max=idx_Depth_not_Critical_Max,not_Critical_Width_Max=idx_Width_not_critical_Max,not_Critical_Lenght_Max=idx_Lenght_not_Critical_Max,  #Critical_Depth=10
             )
     res_draw = defect_tracker.draw(res)

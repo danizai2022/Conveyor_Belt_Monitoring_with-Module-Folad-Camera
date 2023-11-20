@@ -46,6 +46,8 @@ class CameraSetting_UI(Common_Function_UI):
             "Critical_Depth": self.ui.SpinBox_Critical_Depth,
             "TEAR_DEPTH": self.ui.SpinBox_TEAR_DEPTH,
             "MAX_ERROR": self.ui.SpinBox_MAX_ERROR,
+            "pix_length":self.ui.pix_length,
+            "pix_width":self.ui.pix_width
            
         }
         self.parms_algorithm = {
@@ -53,6 +55,9 @@ class CameraSetting_UI(Common_Function_UI):
             "Critical_Depth": 0,
             "TEAR_DEPTH": 0,
             "MAX_ERROR": 0,
+            "pix_length":0,
+            "pix_width":0
+
            
         }
 
@@ -128,13 +133,23 @@ class CameraSetting_UI(Common_Function_UI):
 
     def set_algorithm_parms_UI(self, example_dict):
         for name, value in example_dict.items():
+           if name == "pix_length"  or name == "pix_width":
+                
+                self.general_information_algorithm[name].setText(str(value))
+           else:
             self.general_information_algorithm[name].setValue(value)
        
         self.parms_algorithm = self. get_algorithm_parms_UI()
 
     def get_algorithm_parms_UI(self):
         for name, value in self.general_information_algorithm.items():
-            self.parms_algorithm[name] = int(self.general_information_algorithm[name].value())
+
+            if name == "pix_length"  or name == "pix_width":
+                self.parms_algorithm[name] = float(
+                    self.general_information_algorithm[name].text()
+                )
+            else :
+                self.parms_algorithm[name] = int(self.general_information_algorithm[name].value())
 
         return self.parms_algorithm
 

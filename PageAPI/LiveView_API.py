@@ -12,7 +12,6 @@ from Detection.defectTrackerClass import defectTracker
 
 import cv2
 from backend.Camera import dorsaPylon
-
 from backend import camera_connection
 
 class LiveView_API:
@@ -28,13 +27,13 @@ class LiveView_API:
         self.pix_mm_depth = 0.34
         self.pix_mm_width = 140 / 590
         self.CONVAYER_SPEED = 120  # mm/s
-        self.pix_mm_length = self.step * self.CONVAYER_SPEED / 400   #   750
+        self.pix_mm_length = self.step * self.CONVAYER_SPEED / 400   #   750   
         self.frame_idx =  500 // self.step     #remove the error when the defect occur in th first place of frame
         #self.frame_idx = 0    #get error when the defect occur in th first place of frame
       
       
         self.db_Report=db_Report
-        self.defect_tracker = defectTracker(min_g_thresh=20, step_per_line=2, db_Report=self.db_Report)
+        self.defect_tracker = defectTracker(min_g_thresh=40, step_per_line=2, db_Report=self.db_Report)
         self.parms_camera_liveView = {
             "Serial": 0,
             "Gain": 0,
@@ -62,6 +61,8 @@ class LiveView_API:
             "Critical_Depth": 0,
             "TEAR_DEPTH": 0,
             "MAX_ERROR": 0,
+            "pix_length":0,
+            "pix_width":0
            
         }
         self.camera=camera
@@ -166,13 +167,23 @@ class LiveView_API:
 
             idx_TEAR_DEPTH=self.parms_algorithm_liveView["TEAR_DEPTH"]
             idx_MAX_ERROR=self.parms_algorithm_liveView["MAX_ERROR"]
+            idx_Critical_Depth=self.parms_algorithm_liveView["Critical_Depth"]
+            idx_TEAR_GRADIENT_SIZE=self.parms_algorithm_liveView["GRADIENT_SIZE"]
 
 
-      
+            idx_pix_length=self.parms_algorithm_liveView["pix_length"]
+            idx_pix_width=self.parms_algorithm_liveView["pix_width"]
+
+           
+            self.pix_mm_length=idx_pix_length
+            self.pix_mm_width= idx_pix_width
+           
+        
+
             self.frame_idx = self.frame_idx + 1
 
             res_img, s, Number_Defect, Number_of_Critical_Defect= defect_detection(
-                self.frame_idx, img,idx_TEAR_DEPTH,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,self.defect_tracker
+                self.frame_idx, img,idx_pix_length, idx_pix_width,idx_TEAR_DEPTH,idx_TEAR_GRADIENT_SIZE,idx_MAX_ERROR,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,self.defect_tracker
             )
         
             styles_Live = {

@@ -402,6 +402,67 @@ class databaseManager:
             self.show_message(("Error In Search Table ", e))
             return []
 
+
+    def search_Total(self, table_name):
+        """
+        Searches the specified table for records matching the given column name and value.
+
+        Args:
+            table_name (str): The name of the table to search.
+            col_name (str): The name of the column to match against.
+            value (Any): The value to search for. It will be converted to a string for comparison.
+
+        Returns:
+            list: A list of dictionaries representing the matching records. Each dictionary contains
+                the field names as keys and corresponding field values as values.
+
+        Raises:
+            None.
+
+        Example:
+            To search for all records in the table 'employees' where the 'department' column is 'Sales',
+            you can call the function like this:
+                search('employees', 'department', 'Sales')
+
+            This will return a list of dictionaries representing the matching records.
+
+        """
+
+        try:
+
+
+            # try:
+            if self.check_connection():
+               
+                sql_select_Query = "SELECT * FROM {}".format(
+                        table_name
+                    )
+                cursor = self.execute_quary(sql_select_Query)
+              
+                cursor = self.execute_quary(sql_select_Query)
+
+                records = cursor.fetchall()
+
+                field_names = [col[0] for col in cursor.description]
+                res = []
+
+                for record in records:
+                    record_dict = {}
+                    for i in range(len(field_names)):
+                        record_dict[field_names[i]] = record[i]
+
+                    res.append(record_dict)
+
+                return res
+
+            else:
+                self.show_message("Error in SQL Connection")
+                return []
+
+        except Exception as e:
+            self.show_message(("Error In Search Table ", e))
+            return []
+
     # --------------------------------------------------------------------------
     # --------------------------------------------------------------------------
 

@@ -40,7 +40,9 @@ class defectTracker:
         self.db_Report = db_Report
         self.max_depth=0
 
-    def refresh(self, img, depth_img, Critical_Depth1,Critical_Width,Critical_Lenght,not_Critical_Depth1,not_Critical_Width,not_Critical_Lenght,not_Critical_Depth1_Max,not_Critical_Width_Max,not_Critical_Lenght_Max):
+    def refresh(self, img, depth_img, pix_length, pix_width,Critical_Depth1,Critical_Width,Critical_Lenght,not_Critical_Depth1,not_Critical_Width,not_Critical_Lenght,not_Critical_Depth1_Max,not_Critical_Width_Max,not_Critical_Lenght_Max):
+        self.pix_mm_width= pix_width
+        self.pix_mm_length=pix_length
         h_img, w_img = img.shape[:2]
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         _, thresh_img = cv2.threshold(gray, 30, 255, cv2.THRESH_BINARY)
@@ -93,11 +95,6 @@ class defectTracker:
                     defect_roi = depth_img[max(y, 0) : y + h, x : x + w]
                     roi = img[y : y + h, x : x + w]
                     # cv2.imshow("img", roi)
-                    path = PATH_of_SAVE_IMAGE + str(self.number_of_defect) + ".jpg"
-                    cv2.imwrite(
-                        PATH_of_SAVE_IMAGE + str(self.number_of_defect) + ".jpg",
-                        roi,
-                    )
 
                     self.total_depth.append(
                         abs(defect_roi).max()
@@ -106,9 +103,6 @@ class defectTracker:
                     if abs(defect_roi).max() > Critical_Depth1  and w_mm > Critical_Width   and h_mm > Critical_Lenght :
 
 
-
-
-                        
                         self.number_of_critical_defect = (
                             self.number_of_critical_defect + 1
                         )
@@ -156,21 +150,29 @@ class defectTracker:
                     if critical_flage_id == 0 or critical_flage_id == 1 :
                        # print("self.number_of_defect")
                         #print(self.number_of_defect )
-                        self.number_of_defect = self.number_of_defect + 1
+                       
                         ###str_date = self.getDate_of_system()
                         #str_date = date.today().strftime('%Y/%m/%d')    # This is used for getting the date and time in normal format
                         str_date = date.today().strftime('%Y/%#m/%#d')   # This is used for getting the date and time in decimal format
                         self.max_depth=abs(defect_roi).max()
-                        self.db_Report.add_record(
-                            (
-                                h_mm,
-                                abs(defect_roi).max(),
-                                w_mm,
-                                str_date,
-                                critical_flage_id,
-                                path,
-                            ),
-                        )
+                        records=self.db_Report.search_Total()
+                        if len(records) < 20 :
+                            path = PATH_of_SAVE_IMAGE + str(self.number_of_defect) + ".jpg"
+                            cv2.imwrite(
+                                PATH_of_SAVE_IMAGE + str(self.number_of_defect) + ".jpg",
+                                roi,
+                            )
+                            self.db_Report.add_record(
+                                (
+                                    h_mm,
+                                    abs(defect_roi).max(),
+                                    w_mm,
+                                    str_date,
+                                    critical_flage_id,
+                                    path,
+                                ),
+                            )
+                        self.number_of_defect = self.number_of_defect + 1
                 else:
                     self.inprogress_defects_cnts.append(cnt)
                    
