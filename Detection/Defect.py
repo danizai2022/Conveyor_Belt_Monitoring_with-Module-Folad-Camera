@@ -38,14 +38,24 @@ def defect_detection_find_max(fname,idx_TEAR_DEPTH):
     return  pts[:,1].max()
 
 
-def defect_detection(frame_idx,fname,idx_pix_length, idx_pix_width,idx_TEAR_DEPTH,idx_TEAR_GRADIENT_SIZE,idx_MAX_ERROR,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,defect_tracker):
+def defect_detection(frame_idx,fname,idx_gradient_number,idx_pix_length, idx_pix_width,idx_TEAR_DEPTH,idx_TEAR_GRADIENT_SIZE,idx_MAX_ERROR,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,defect_tracker):
 
     GRADIANT_SIZE = idx_TEAR_GRADIENT_SIZE
     MAX_ERROR =idx_MAX_ERROR
 
     # gradiant = heatMap.G11.generate_gradiant(GRADIANT_SIZE)   #Previous version
     ######gradiant = heatMap.G12.generate_gradiant(GRADIANT_SIZE)
-    gradiant = heatMap.G14.generate_gradiant(GRADIANT_SIZE)
+
+    G14 = heatMap.colorGradient()
+    ###########G6.add_color((0, 0, 0), 0.2)  # black color
+    G14.add_color((0, 0, 255), 0)
+    G14.add_color((0, 255, 255), idx_gradient_number)
+    G14.add_color((255, 0, 0), idx_gradient_number+.1)
+    G14.add_color((0, 0, 0), idx_gradient_number+.2)
+    G14.add_color((0, 0, 0), idx_gradient_number+.3)  # white clack
+
+
+    gradiant = G14.generate_gradiant(GRADIANT_SIZE)
             #####self.gradiant = self.gradiant.reshape((-1, 3))
     gradiant = gradiant.reshape((-1, 3))
     

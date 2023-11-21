@@ -33,7 +33,7 @@ class LiveView_API:
       
       
         self.db_Report=db_Report
-        self.defect_tracker = defectTracker(min_g_thresh=40, step_per_line=2, db_Report=self.db_Report)
+        self.defect_tracker = defectTracker(min_g_thresh=120, step_per_line=2, db_Report=self.db_Report)   # min_g_thresh=  66   76
         self.parms_camera_liveView = {
             "Serial": 0,
             "Gain": 0,
@@ -62,7 +62,8 @@ class LiveView_API:
             "TEAR_DEPTH": 0,
             "MAX_ERROR": 0,
             "pix_length":0,
-            "pix_width":0
+            "pix_width":0,
+            "gradient_number" :0
            
         }
         self.camera=camera
@@ -175,17 +176,21 @@ class LiveView_API:
             idx_pix_width=self.parms_algorithm_liveView["pix_width"]
 
            
+
+            idx_gradient_number=self.parms_algorithm_liveView["gradient_number"]
+    
+           
             self.pix_mm_length=idx_pix_length
             self.pix_mm_width= idx_pix_width
-           
         
 
             self.frame_idx = self.frame_idx + 1
 
             res_img, s, Number_Defect, Number_of_Critical_Defect= defect_detection(
-                self.frame_idx, img,idx_pix_length, idx_pix_width,idx_TEAR_DEPTH,idx_TEAR_GRADIENT_SIZE,idx_MAX_ERROR,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,self.defect_tracker
+                self.frame_idx, img,idx_gradient_number,idx_pix_length, idx_pix_width,idx_TEAR_DEPTH,idx_TEAR_GRADIENT_SIZE,idx_MAX_ERROR,idx_Depth_Critical,idx_Width_critical,idx_Lenght_Critical,idx_Depth_not_Critical,idx_Width_not_critical,idx_Lenght_not_Critical,idx_Depth_not_Critical_Max,idx_Width_not_critical_Max,idx_Lenght_not_Critical_Max,self.defect_tracker
             )
         
+
             styles_Live = {
                     "Not_Critical_live_view": "background-color:rgb(219, 219, 219)",
                     "Critical_live_view": "background-color:rgb(219, 219, 219) ",

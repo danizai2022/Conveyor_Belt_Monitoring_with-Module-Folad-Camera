@@ -47,18 +47,19 @@ class CameraSetting_UI(Common_Function_UI):
             "TEAR_DEPTH": self.ui.SpinBox_TEAR_DEPTH,
             "MAX_ERROR": self.ui.SpinBox_MAX_ERROR,
             "pix_length":self.ui.pix_length,
-            "pix_width":self.ui.pix_width
+            "pix_width":self.ui.pix_width,
+            "gradient_number":self.ui.gradient_number
            
         }
+        
         self.parms_algorithm = {
             "GRADIENT_SIZE": 0,
             "Critical_Depth": 0,
             "TEAR_DEPTH": 0,
             "MAX_ERROR": 0,
             "pix_length":0,
-            "pix_width":0
-
-           
+            "pix_width":0,
+            "gradient_number": 0
         }
 
         self.ui.Stop_connection_Camera_setting.setEnabled(False)
@@ -133,7 +134,7 @@ class CameraSetting_UI(Common_Function_UI):
 
     def set_algorithm_parms_UI(self, example_dict):
         for name, value in example_dict.items():
-           if name == "pix_length"  or name == "pix_width":
+           if name == "pix_length"  or name == "pix_width" or name=="gradient_number":
                 
                 self.general_information_algorithm[name].setText(str(value))
            else:
@@ -144,7 +145,7 @@ class CameraSetting_UI(Common_Function_UI):
     def get_algorithm_parms_UI(self):
         for name, value in self.general_information_algorithm.items():
 
-            if name == "pix_length"  or name == "pix_width":
+            if name == "pix_length"  or name == "pix_width" or  name=="gradient_number":
                 self.parms_algorithm[name] = float(
                     self.general_information_algorithm[name].text()
                 )

@@ -744,7 +744,7 @@ QPushButton:pressed {
              <number>3</number>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="Live_View_Page">
              <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -4811,7 +4811,7 @@ font: 16pt &quot;Mongolian Baiti&quot;;</string>
 border: 2px solid back</string>
                    </property>
                    <property name="currentIndex">
-                    <number>2</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="tab">
                     <attribute name="title">
@@ -5954,7 +5954,7 @@ QPushButton:pressed {
                        <x>10</x>
                        <y>300</y>
                        <width>401</width>
-                       <height>481</height>
+                       <height>461</height>
                       </rect>
                      </property>
                      <property name="styleSheet">
@@ -6287,6 +6287,52 @@ border: no</string>
                          </item>
                          <item>
                           <widget class="QLineEdit" name="pix_width">
+                           <property name="maximumSize">
+                            <size>
+                             <width>60</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color :rgb(219, 219, 219);
+border-style: solid;
+border-width: 1;
+border-radius: 3;
+font-size:18px;</string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame_95">
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_88">
+                         <item>
+                          <widget class="QLabel" name="label_137">
+                           <property name="styleSheet">
+                            <string notr="true">font: 13pt &quot;Mongolian Baiti&quot;;
+border: no</string>
+                           </property>
+                           <property name="text">
+                            <string>GRADIENT_NUMBER</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="gradient_number">
                            <property name="maximumSize">
                             <size>
                              <width>60</width>

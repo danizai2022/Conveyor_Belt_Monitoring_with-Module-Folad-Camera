@@ -24,6 +24,8 @@ class colorGradient:
         self.colors = []
 
     def generate_gradiant(self, size, smooth=True):
+
+
         self.colors.sort(key=lambda x: x.position)
 
         # if fisrt color start from mid:
@@ -65,87 +67,7 @@ class colorGradient:
         return image
 
 
-G1 = colorGradient()
-G1.add_color((255, 0, 0), 0)
-G1.add_color((255, 255, 0), 0.3)
-G1.add_color((0, 255, 0), 0.5)
-G1.add_color((0, 255, 255), 0.7)
-G1.add_color((0, 0, 255), 1)
 
-G2 = colorGradient()
-G2.add_color((0, 0, 255), 0)
-G2.add_color((0, 255, 255), 0.2)
-G2.add_color((100, 200, 50), 0.4)
-G2.add_color((100, 200, 50), 0.5)
-G2.add_color((100, 200, 50), 0.6)
-G2.add_color((255, 255, 0), 0.8)
-G2.add_color((255, 0, 0), 1)
-
-
-G3 = colorGradient()
-G3.add_color((0, 0, 255), 0)
-# G3.add_color((0,255,255), 0.2)
-G3.add_color((50, 50, 50), 0.4)
-G3.add_color((50, 50, 50), 0.5)
-G3.add_color((50, 50, 50), 0.6)
-# G3.add_color((255, 255, 0), 0.8)
-G3.add_color((255, 0, 0), 1)
-
-
-G8 = colorGradient()
-###########G6.add_color((0, 0, 0), 0.2)  # black color
-G8.add_color((255, 255, 255), 0.2)  # white clack
-# G6.add_color((50, 50, 50), 0.4)
-G8.add_color((0, 0, 0), 0.35)  # black color
-
-
-G9 = colorGradient()
-###########G6.add_color((0, 0, 0), 0.2)  # black color
-G9.add_color((255, 255, 255), 0.18)  # white clack
-# G6.add_color((50, 50, 50), 0.4)
-G9.add_color((0, 0, 0), 0.28)  # black color
-
-
-G10 = colorGradient()
-###########G6.add_color((0, 0, 0), 0.2)  # black color
-G10.add_color((0, 0, 255), 0)
-G10.add_color((0, 255, 255), 0.18)
-G10.add_color((255, 0, 0), 0.28)
-G10.add_color((0, 0, 0), 0.38)
-G10.add_color((0, 0, 0), 0.48)  # white clack
-# G10.add_color((0, 0, 0), 0.7)
-# G10.add_color((255, 0, 0), 0.8)
-# G10.add_color((0, 255, 255), 0.9)
-# G6.add_color((50, 50, 50), 0.4)
-# G10.add_color((0, 0, 255), 1)  # black color
-
-G14 = colorGradient()
-###########G6.add_color((0, 0, 0), 0.2)  # black color
-G14.add_color((0, 0, 255), 0)
-G14.add_color((0, 255, 255), 0.22)
-G14.add_color((255, 0, 0), 0.32)
-G14.add_color((0, 0, 0), 0.42)
-G14.add_color((0, 0, 0), 0.52)  # white clack
-
-
-G11 = colorGradient()
-###########G6.add_color((0, 0, 0), 0.2)  # black color
-G11.add_color((0, 0, 0), 0.28)  # white clack
-# G6.add_color((50, 50, 50), 0.4)
-G11.add_color((255, 255, 255), 0.28)  # black color
-
-
-G12 = colorGradient()
-###########G6.add_color((0, 0, 0), 0.2)  # black color
-G12.add_color((255, 255, 255), 0.3)  # white clack
-# G6.add_color((50, 50, 50), 0.4)
-G12.add_color((0, 0, 0), 0.3)  # black color
-
-G13 = colorGradient()
-###########G6.add_color((0, 0, 0), 0.2)  # black color
-G13.add_color((255), 0.2)  # white clack
-# G6.add_color((50, 50, 50), 0.4)
-G13.add_color((0), 0.4)  # black color
 
 if __name__ == "__main__":
     cg = colorGradient()

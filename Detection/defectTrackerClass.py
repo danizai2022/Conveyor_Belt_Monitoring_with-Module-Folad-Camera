@@ -41,8 +41,11 @@ class defectTracker:
         self.max_depth=0
 
     def refresh(self, img, depth_img, pix_length, pix_width,Critical_Depth1,Critical_Width,Critical_Lenght,not_Critical_Depth1,not_Critical_Width,not_Critical_Lenght,not_Critical_Depth1_Max,not_Critical_Width_Max,not_Critical_Lenght_Max):
+       
         self.pix_mm_width= pix_width
         self.pix_mm_length=pix_length
+
+
         h_img, w_img = img.shape[:2]
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         _, thresh_img = cv2.threshold(gray, 30, 255, cv2.THRESH_BINARY)

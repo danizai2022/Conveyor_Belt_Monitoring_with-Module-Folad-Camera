@@ -55,7 +55,6 @@ class CameraSetting_API:
            total_count = 0
 
            for i in range(w-1):
-
               for j in range (h-1):
                   if  img[j,i]>100:
                       #print(img[i,j])

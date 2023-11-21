@@ -19,8 +19,9 @@ example_dict2 = {
     "MAX_ERROR": 10,
     "TEAR_DEPTH": 421,
     "Critical_Depth": 10,  # 7 in previous section
-    "pix_width":2.3,
-     "pix_length" :4.6
+    "pix_width":0.26,
+    "pix_length" :0.66,
+     "gradient_number" :0.22
 
 }
 

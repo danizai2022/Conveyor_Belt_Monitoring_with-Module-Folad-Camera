@@ -1,6 +1,6 @@
 
 class Report_DB:
-    TABLE_NAME = "report906"
+    TABLE_NAME = "report2006"
     TABLE_COLS = [
         {"col_name": "Length", "type": "float(10,7)"},
         {"col_name": "Depth", "type": "float(10,7)"},
