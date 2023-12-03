@@ -129,8 +129,9 @@ class LiveView_API:
         self.ui_live.disable_live()
         self.ui_live.enable_stop()
        
-
         if self.camera !=None:
+     
+
             #print("connect To camera on liveView_API")
 
             ##################  self.camera.build_converter(pixel_type=dorsaPylon.PixelType.GRAY8)         ###################  for getting image from  camera set on main_API
@@ -142,7 +143,7 @@ class LiveView_API:
             Gain=self.parms_camera_liveView["Gain"]
 
         
-
+            self.camera.Operations.start_grabbing()
             self.camera.Parms.set_exposureTime(Exposure)      # Get good answer for second version ----- 5000
             self.camera.Parms.set_gain(Gain)  #217   #### get the good answer         # Get good answer for second version ----- 517
             img = self.camera.getPictures()
@@ -238,6 +239,9 @@ class LiveView_API:
 
 
             self.show_image(res_img)
+
+        else :
+            print("error in connection")
 
     def set_initial_param_calibration(self, param_cal):      
         self.set_calibration_parms_API(param_cal)

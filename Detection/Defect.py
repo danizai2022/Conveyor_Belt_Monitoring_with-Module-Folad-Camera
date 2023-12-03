@@ -9,6 +9,13 @@ from scipy.optimize import curve_fit
 
 
 
+GRADIANT_SIZE = 100 # 100
+MAX_ERROR =10
+# gradiant = heatMap.G11.generate_gradiant(GRADIANT_SIZE)   #Previous version
+######gradiant = heatMap.G12.generate_gradiant(GRADIANT_SIZE)
+gradiant = heatMap.G10.generate_gradiant(GRADIANT_SIZE)
+gradiant = gradiant.reshape((-1, 3))
+
 res = np.zeros((500, 640, 3), dtype=np.uint8)
 depth_img = np.zeros(res.shape[:2], dtype=np.float32)
 
@@ -23,7 +30,7 @@ def defect_detection_find_max(fname,idx_TEAR_DEPTH):
     if fname.ndim >2 :
             fname = cv2.cvtColor(fname, cv2.COLOR_BGR2GRAY)
 
-    img = fname[:, 25:620]
+    img = fname[:, 60:560]
     img = cv2.blur(img, (5, 1))
     
     pts = ConvayerBase.extract_points(
@@ -46,18 +53,14 @@ def defect_detection(frame_idx,fname,idx_gradient_number,idx_pix_length, idx_pix
     # gradiant = heatMap.G11.generate_gradiant(GRADIANT_SIZE)   #Previous version
     ######gradiant = heatMap.G12.generate_gradiant(GRADIANT_SIZE)
 
-    G14 = heatMap.colorGradient()
+    
     ###########G6.add_color((0, 0, 0), 0.2)  # black color
-    G14.add_color((0, 0, 255), 0)
-    G14.add_color((0, 255, 255), idx_gradient_number)
-    G14.add_color((255, 0, 0), idx_gradient_number+.1)
-    G14.add_color((0, 0, 0), idx_gradient_number+.2)
-    G14.add_color((0, 0, 0), idx_gradient_number+.3)  # white clack
 
 
-    gradiant = G14.generate_gradiant(GRADIANT_SIZE)
+
+    #gradiant = G14.generate_gradiant(GRADIANT_SIZE)
             #####self.gradiant = self.gradiant.reshape((-1, 3))
-    gradiant = gradiant.reshape((-1, 3))
+
     
     ###########################print("Idx on Defect Detection Page")
     ######################print(idx)    check whether idx recieve from LiveView_API page or not 
@@ -78,7 +81,9 @@ def defect_detection(frame_idx,fname,idx_gradient_number,idx_pix_length, idx_pix
     if fname.ndim >2 :
             fname = cv2.cvtColor(fname, cv2.COLOR_BGR2GRAY)
     #img = fname[:, 100:620]
+    #img = fname[:, 100:540]
     img = fname[:, 25:620]
+   
     # -----------------------------------------------------------------------5
     #########################################      img = fname  ####################################  for getting image from camera
     # -----------------------------------------------------------------------
@@ -91,7 +96,7 @@ def defect_detection(frame_idx,fname,idx_gradient_number,idx_pix_length, idx_pix
                 img,
                 thresh=100,
                 perspective_angle=60,
-                min_tear_lenght=2,
+                min_tear_lenght=2,   # 2
                 tear_depth=idx_TEAR_DEPTH   ####### 570
             )
    

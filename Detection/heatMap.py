@@ -66,7 +66,13 @@ class colorGradient:
             image[:, i, :] = self.gradiant
         return image
 
+G10= colorGradient()
 
+G10.add_color((0, 0, 255), 0)
+G10.add_color((0, 255, 255), .22)
+G10.add_color((255, 0, 0), .33)
+G10.add_color((0, 0, 0), .44)
+G10.add_color((0, 0, 0),.55)  # white clack
 
 
 if __name__ == "__main__":

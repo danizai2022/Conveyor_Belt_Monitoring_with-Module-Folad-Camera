@@ -74,7 +74,7 @@ class defectTracker:
         self.max_depth=0
         for cnt in contours:
             area = cv2.contourArea(cnt)
-            if area > 300:  # or perimeter > 100:   # filter the area of the defect
+            if area > 100:  # or perimeter > 100:   # filter the area of the defect
                 critical_flage_id = 2
                 ######### I changed this part
                 ####if area > 300:  # or perimeter > 100:   # filter the area of the defect
@@ -182,6 +182,9 @@ class defectTracker:
 
             else:  # or perimeter > 100:
                 self.inprogress_defects_cnts2.append(cnt)
+         #       x, y, w, h = cv2.boundingRect(cnt)
+            # Rand_color = np.random.randint(0, 255), np.random.randint(0, 255), np.random.randint(0, 255)
+        #        cv2.rectangle(res, (x, y), (x + w, y + h), color=(0, 0, 0), thickness=-1)
                
         return self.max_depth
         
@@ -207,7 +210,7 @@ class defectTracker:
         res = img.copy()
         res = cv2.blur(res, (3, 3))
         all_cnts = self.inprogress_defects_cnts + self.complete_defects_cnts
-        #all_cnts2 = self.inprogress_defects_cnts2
+        all_cnts2 = self.inprogress_defects_cnts2
 
         for cnt in all_cnts:
             x, y, w, h = cv2.boundingRect(cnt)
@@ -217,10 +220,10 @@ class defectTracker:
             mean_intensity = defect_roi[defect_roi > 0].mean()
 
 
-       ## for cnt in all_cnts2:
-       ##      x, y, w, h = cv2.boundingRect(cnt)
+        for cnt in all_cnts2:
+            x, y, w, h = cv2.boundingRect(cnt)
             # Rand_color = np.random.randint(0, 255), np.random.randint(0, 255), np.random.randint(0, 255)
-       ##     cv2.rectangle(res, (x, y), (x + w, y + h), color=(0, 0, 0), thickness=-1)
+          #  cv2.rectangle(res, (x, y), (x + w, y + h), color=(0, 0, 0), thickness=-1)
 
         return res
 
